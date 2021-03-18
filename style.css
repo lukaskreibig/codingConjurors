@@ -26,7 +26,7 @@
   background: #00dfdf;
 }
 .slide-five {
-  background: #00dfdf;
+  background: #34df00;
 }
 .outer-wrapper {
   width: 100vh;
@@ -36,6 +36,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   position: absolute;
+  left: 0px;
+  top: 0px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
