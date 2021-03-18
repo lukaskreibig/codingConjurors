@@ -52,15 +52,18 @@
 /* The flip box container  */
 
 .tarot-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+  margin: 30px;
 }
 
 .flip-box {
-  
+  position: relative;
   padding: 15px;
-  width: 120px;
-  height: 250px;
+  margin: 25px;
+  width: 200px;
+  height: 400px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -76,7 +79,7 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-box:hover .flip-box-inner {
+.flip-box:hover .flip-box-inner { /*use js DOM to make it happen on click instead of flip*/
   transform: rotateY(180deg);
 }
 
@@ -100,4 +103,9 @@
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+/*prediction box*/
+.prediction-box {
+
 }
