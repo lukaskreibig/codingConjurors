@@ -26,12 +26,12 @@
   background: #00dfdf;
 }
 .slide-five {
-  background: #00dfdf;
+  background: #34df00;
 }
 .outer-wrapper {
   width: 100vh;
   height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
+  transform: rotate(-90deg) translateX(-99.2vh);
   transform-origin: top left;
   overflow-y: scroll;
   overflow-x: hidden;
