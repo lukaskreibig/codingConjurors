@@ -28,7 +28,7 @@
   background: #00dfdf;
 }
 .slide-five {
-  background: #34df00;
+  background: #ab87d4;
 }
 .outer-wrapper {
   width: 100vh;
@@ -45,4 +45,46 @@
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Anca's Css */
+.sortingSocks {
+margin: 6%;
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-template-rows: 300px 200px;
+grid-gap: 50px;
+font-size: 20px;
+}
+
+.element1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+}
+
+.element2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.element3 {
+  background-color: rgb(178, 168, 241);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: center;
+  line-height: 1.6;
+  padding: 20%;
+  
+}
+
+#socks {
+  max-width: 100%; 
+  height: auto;
 }
