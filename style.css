@@ -3,6 +3,12 @@
 * {
   font-size: 100%;
   font-family: "VT323", monospace;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .slide-one,
@@ -45,23 +51,25 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-::-webkit-scrollbar {
-  display: none;
+
+.progress-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.placeholder {
+  height: 87vh;
+  width: 100vw;
 }
 
 .progress {
-  height: 10px; /* Replace with the height your footer should be */
-  width: 100%; /* Don't change */
+  width: 100vw;
   position: sticky;
-  bottom: 0;
-}
-
-.progress_contents {
-  height: 10px; /* Replace with the height your footer should be */
-  width: 80%; /* Visible width of footer */
-  margin: auto;
+  position: -webkit-sticky; /* Safari */
   text-align: center;
+  font-size: 30px;
 }
