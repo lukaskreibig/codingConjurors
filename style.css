@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
+* {
+  font-size: 100%;
+  font-family: "VT323", monospace;
+}
+
 .slide-one,
 .slide-two,
 .slide-three,
@@ -45,4 +50,18 @@
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.progress {
+  height: 10px; /* Replace with the height your footer should be */
+  width: 100%; /* Don't change */
+  position: sticky;
+  bottom: 0;
+}
+
+.progress_contents {
+  height: 10px; /* Replace with the height your footer should be */
+  width: 80%; /* Visible width of footer */
+  margin: auto;
+  text-align: center;
 }
