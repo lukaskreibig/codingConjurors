@@ -6,11 +6,9 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
-
 .slide-one,
 .slide-two,
 .slide-three,
@@ -71,5 +69,5 @@
   position: sticky;
   position: -webkit-sticky; /* Safari */
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
 }
