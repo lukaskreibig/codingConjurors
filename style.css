@@ -51,26 +51,35 @@
   top: 0px;
 }
 
-.progress-container {
-  height: 100vh;
+#progress-container {
+  height: 98vh;
   width: 100vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  position: absolute;
-  left: 0px;
-  top: 0px;
 }
 
-.placeholder {
+#placeholder {
   height: 87vh;
   width: 100vw;
 }
 
-.progress {
-  width: 100vw;
+#progress {
+  width: 80vw;
+  height: 10%;
   position: sticky;
   position: -webkit-sticky; /* Safari */
   text-align: center;
-  font-size: 32px;
+  font-size: 25px;
+}
+
+#progress-bar {
+  transition: width 2s;
+  color: black;
+  border-radius: 16px;
+  width: 1%;
+  height: 10%;
+  color: white;
+  background-color: darkmagenta;
+  border-radius: 16px;
 }
