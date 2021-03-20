@@ -15,3 +15,30 @@ progressBar = () => {
   // width of progress bar equals width of percentage where user is
   document.getElementById("progress-bar").style.width = scrolled + "%";
 }
+
+
+//onscroll start function
+// outerWrapper.onscroll = () => { progressStep(); };
+
+
+// progressStep = () => {
+//   let progressStep = (document.getElementById("progress-bar"))
+
+//  switch(progressStep.style.width) {
+//     case "0%":
+    
+//     break;
+//     case "25%":
+    
+//     break;
+//     case "50%":
+    
+//     break;
+//     case "75%":
+    
+//     break;
+//     case "100%":
+    
+//     break;
+// }
+// }

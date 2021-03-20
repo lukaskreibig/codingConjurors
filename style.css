@@ -66,7 +66,7 @@
 
 #progress {
   width: 80vw;
-  height: 10%;
+  height: 4%;
   position: sticky;
   position: -webkit-sticky; /* Safari */
   text-align: center;
@@ -75,11 +75,23 @@
 
 #progress-bar {
   transition: width 2s;
-  color: black;
   border-radius: 16px;
-  width: 1%;
-  height: 10%;
-  color: white;
+  width: 0%;
+  height: 20%;
   background-color: darkmagenta;
-  border-radius: 16px;
+  position: absolute;
+  margin-top: 0.4%;
+  top: 0;
+  left: 0;
+}
+
+#progress-dots {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: darkmagenta;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 1%;
 }
