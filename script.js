@@ -31,26 +31,26 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         console.log(typeof(progress))
         console.log(progress) 
                   
-                  if(progress > -1 && progress <= 25) 
+                  if(progress > -1 && progress <= 11) 
                   {
                   dot2.style.display = "none";
                   }
-                  else if(progress > 25 && progress <= 50)
+                  else if(progress > 11 && progress <= 35)
                   {
                   dot2.style.display = "block";
                   dot3.style.display = "none";
                   }
-                  else if(progress > 50 && progress <= 75)
+                  else if(progress > 35 && progress <= 61)
                   {
                   dot3.style.display = "block";
                   dot4.style.display = "none";
                   }
-                  else if (progress > 75 && progress <= 99)
+                  else if (progress > 61 && progress <= 87)
                   {
                   dot4.style.display = "block";
                   dot5.style.display = "none";
                   }
-                  else if (progress == 100)
+                  else if (progress > 88)
                   {
                   dot5.style.display = "block";
                   }                 
