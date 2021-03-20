@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
+/* import font */
+
 * {
   font-size: 100%;
   font-family: "VT323", monospace;
@@ -8,6 +10,8 @@
 }
 ::-webkit-scrollbar {
   display: none;
+
+  /* main content */
 }
 .slide-one,
 .slide-two,
@@ -17,13 +21,7 @@
   height: 100vh;
   width: 100vw;
 }
-.inner-wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 500vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-}
+
 .slide-one {
   background: #efdefe;
 }
@@ -39,6 +37,18 @@
 .slide-five {
   background: #34df00;
 }
+
+/* outer wrapper is transformed for sidescroll
+     inner wrapper is transformed back */
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 500vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
 .outer-wrapper {
   width: 100vh;
   height: 100vw;
@@ -51,6 +61,10 @@
   top: 0px;
 }
 
+/* progress bar CSS starts here */
+
+/* container for flexbox */
+
 #progress-container {
   height: 98vh;
   width: 100vw;
@@ -59,10 +73,14 @@
   justify-content: center;
 }
 
+/* forces the bar to the bottom */
+
 #placeholder {
   height: 87vh;
   width: 100vw;
 }
+
+/* container to make progress bar sticky */
 
 #progress {
   width: 80vw;
@@ -72,6 +90,8 @@
   text-align: center;
   font-size: 25px;
 }
+
+/* regulates the progress bar */
 
 #progress-bar {
   transition: width 0.1s;
@@ -85,6 +105,8 @@
   left: 0;
 }
 
+/* regulates the dots on the progress bar */
+
 .progress-dot {
   border-radius: 50%;
   height: 20px;
@@ -94,13 +116,13 @@
   top: 0;
   left: 0;
   margin-bottom: 1%;
-  /* fade in and out effect for different browser */
-  animation: fadeIn ease 0.5s;
-  -webkit-animation: fadeIn ease 0.5s;
-  -moz-animation: fadeIn ease 0.5s;
-  -o-animation: fadeIn ease 0.5s;
-  -ms-animation: fadeIn ease 0.5s;
-  -ms-animation: fadeIn ease 0.5s;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
 }
 
 #dot2 {
@@ -122,6 +144,8 @@
   left: 99%;
   display: none;
 }
+
+/* regulates the fadeIn */
 
 @keyframes fadeIn {
   0% {
@@ -167,3 +191,5 @@
     opacity: 1;
   }
 }
+
+/* progress bar css ends here */

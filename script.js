@@ -4,6 +4,7 @@ let outerWrapper = document.querySelector('.outer-wrapper')
 //onscroll start function
 outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
+      //  calculation based on scrolling for the progress bar
       progressBar = () => {
 
         // position of Users scrolling
@@ -17,19 +18,23 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
       }
 
 
-
+      // this function handles the appearance of the progress dots
       progressStep = () => {
+
+        // get all the CSS
         let progressDiv = (document.getElementById("progress-bar"))
         let dot2 = document.getElementById("dot2")
         let dot3 = document.getElementById("dot3")
         let dot4 = document.getElementById("dot4")
         let dot5 = document.getElementById("dot5")
 
-         
+        // turn the scroll percentage from string to number
         let progressString = progressDiv.style.width
         let progress = Number.parseInt(progressString) 
-        console.log(typeof(progress))
-        console.log(progress) 
+        // console.log(typeof(progress))
+        // console.log(progress) 
+
+                  // regulates when the dots appears
                   
                   if(progress > -1 && progress <= 11) 
                   {
