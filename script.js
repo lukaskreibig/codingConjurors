@@ -37,10 +37,10 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         let progressDiv = (document.getElementById("progress-bar"))
         let progressString = progressDiv.style.width
         let progress = Number.parseInt(progressString) 
-        // console.log(typeof(progress))
-        // console.log(progress) 
+        console.log(typeof(progress))
+        console.log(progress) 
 
-                  // regulates when the dots appears
+                  // regulates when the things appears
                   
                   if(progress > -1 && progress <= 11) 
                   {
