@@ -57,6 +57,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .placeholder {
