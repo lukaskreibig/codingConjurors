@@ -11,9 +11,16 @@ const careers = [
    
 let button = document.querySelector("button");
 let answer = document.querySelector("h1");
+let speech = document.getElementsByClassName("sortingSocks");
+let speechBubble = document.getElementById("speech");
+
+speech[0].addEventListener('click', () => {
+    speechBubble.innerHTML = "...unless you click again!";
+})
 
 button.onclick = function(){
-   
+ 
     let i = Math.floor(0 + Math.random()*(careers.length + 1 - 0))
 	answer.innerHTML = `Your destiny is to become a ${careers[i].title}! ${careers[i].text}`;
-    }
+    
+}

@@ -18,9 +18,12 @@
 .slide-one {
   background: #efdefe;
 }
-.slide-two {
-  background: #47026C;
+
+.slide-two{
+background-image: url("./assets/Bluedabade.jpg");
+background-position: center;
 }
+
 .slide-three {
   background: #0bbaa0;
 }
@@ -48,6 +51,7 @@
 }
 
 /* Anca's Css */
+
 .sortingSocks {
 margin: 6%;
 display: grid;
@@ -70,8 +74,18 @@ font-family: 'VT323', monospace;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 130%;
+}
  /* 
  
  #C2F8CB; - hex for green #1
@@ -86,7 +100,7 @@ font-family: 'VT323', monospace;
 
  */ 
 .element3 {
-  background-color: #C2F8CB;    
+  background-color: #c2f8cb46; 
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -94,7 +108,8 @@ font-family: 'VT323', monospace;
   text-align: center;
   line-height: 1.6;
   padding: 10%;
- font-size: 1vw;
+  font-size: 1vw;
+  color: white;
 }
 
 #socks {
