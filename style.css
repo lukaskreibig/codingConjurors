@@ -22,6 +22,7 @@
 .slide-two{
 background-image: url("./assets/Bluedabade.jpg");
 background-position: center;
+object-fit: cover;
 }
 
 .slide-three {
@@ -100,7 +101,7 @@ font-family: 'VT323', monospace;
 
  */ 
 .element3 {
-  background-color: #c2f8cb46; 
+  background-color: #e4afff63; 
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
