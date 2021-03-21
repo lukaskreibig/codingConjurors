@@ -17,6 +17,7 @@ let outerWrapper = document.querySelector('.outer-wrapper')
         let monster = document.getElementById("monsteranimation")
 
         let monsterPlace = 0;
+        let monsterBack = 0;
 
 //onscroll start function
 outerWrapper.onscroll = () => { progressBar(); progressStep()};
@@ -44,7 +45,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         let progress = Number.parseInt(progressString)
         console.log(progress)
 
-        //Monster Animation function declaration
+        //Monster Animation function declaration forwards
         let id = null;
         function monsterani(start, stop) {   
           let pos = start;
@@ -61,6 +62,23 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         } 
 
 
+        //Monster Animation function declaration backwards
+        let id2 = null;
+        function monsteraniback(start, stop) {   
+          let pos2 = start;
+          clearInterval(id2);
+          id2 = setInterval(frame, 10);
+          function frame() {
+            if (pos2 == stop) {
+              clearInterval(id2);
+            } else {
+              pos2--;
+              monster.style.left = pos2 + '%';
+            }
+          }
+        } 
+
+
                   // regulates when the things appears
                   
                   if(progress > -1 && progress <= 11) 
@@ -69,7 +87,9 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text2.style.display = "none";
                       
                       if(monsterPlace == 0){
-                        return  monsterPlace = 1;
+                        monsterPlace = 1;
+                        monsterBack = 5;
+                        return monsterPlace, monsterBack;
                       }
 
                   }
@@ -84,8 +104,10 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text3.style.display = "none";
 
                       if(monsterPlace == 1){
-                        monsterani(1, 22)
-                        return monsterPlace = 2
+                        monsterani(1, 22);
+                        monsterPlace = 2;
+                        monsterBack = 4;
+                        return monsterPlace, monsterBack;
                       }
                   }
             
@@ -98,14 +120,12 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text3.style.display = "block";
                       text4.style.display = "none";
 
-                     if(monsterPlace == 2){
+                     if(progress == 35 && monsterPlace == 2){
                       monsterani(22, 48)
-                      return monsterPlace = 3
+                      monsterPlace = 3;
+                      monsterBack = 2;
+                      return monsterPlace, monsterBack;
                       }
-                      // if(monsterBack == 2 ){
-                      //   monsterani(48, 22)
-                      //   return monsterBack = 3
-                      // }
 
                   }
                   else if (progress > 61 && progress <= 87)
@@ -116,14 +136,15 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text4.style.display = "block";
                       text5.style.display = "none";
 
-                      if(monsterPlace == 3 ){
+                      if(progress == 62 && monsterPlace == 3 ){
                         monsterani(48, 73)
-                        return monsterPlace = 4
+                        }
+                      if(progress == 87 && monsterBack == 0){
+                        monsteraniback(87, 73)
                       }
-                      // if(monsterBack == 1 ){
-                      //   monsterani(73, 48)
-                      //   return monsterBack = 2
-                      // }
+                        monsterPlace = 4;
+                        monsterBack = 1;
+                        return monsterPlace, monsterBack;
 
                   }
                   else if (progress > 88)
@@ -133,7 +154,9 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                   if(monsterPlace == 4){
                   monsterani(73, 97)
-                  return monsterPlace = 5
+                  monsterPlace = 3
+                  monsterBack = 0
+                  return monsterPlace, monsterBack;
                   }
                     
                     
