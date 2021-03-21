@@ -14,8 +14,10 @@ let outerWrapper = document.querySelector('.outer-wrapper')
         let text4 = document.getElementById("progress-text4")
         let text5 = document.getElementById("progress-text5")
 
+        // get the css for the monster animation
         let monster = document.getElementById("monsteranimation")
 
+        // important for animation of the monster
         let monsterPlace = 1;
         let monsterBack = -1;
 
@@ -79,13 +81,15 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         } 
 
 
-                  // regulates when the things appears
-                  
+                  // regulates when  things appears in STAGE 1
+                
                   if(progress > -1 && progress <= 11) 
                   {
+                     //makes text and dots appear / disappear
                       dot2.style.display = "none";
                       text2.style.display = "none";
 
+                      //regulates flying with a switch + calls flying function
                       if(monsterBack == 1){
                         monsteraniback(22, 1)
                         monsterPlace = 1
@@ -94,8 +98,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                         return monsterPlace, monsterBack;
                         }   
                   }
-
-
+                  // STAGE 2 starts here
                   else if(progress > 11 && progress < 35)
                   {
                       dot2.style.display = "block";
@@ -104,23 +107,20 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text2.style.display = "block";
                       text3.style.display = "none";
 
-                      if(progress == 12 && monsterPlace == 1){
+                      if(progress == 12,13,14 && monsterPlace == 1){
                         monsterani(1, 22);
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
-                      if(progress == 34 && monsterBack == 2){
+                      if(progress == 34,33,32 && monsterBack == 2){
                         monsteraniback(48, 22)
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
-                  
                         console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
-                      
                   }
-            
-                   
+                  // STAGE 3 starts here
                   else if(progress > 35 && progress < 61)
                   {
                       dot3.style.display = "block";
@@ -129,20 +129,20 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text3.style.display = "block";
                       text4.style.display = "none";
 
-                     if(progress == 36 && monsterPlace == 2){
+                     if(progress == 36,37,38 && monsterPlace == 2){
                       monsterani(22, 48)
                       monsterPlace = 3;
                       monsterBack = 2;
                      }
-                     if(progress == 60 && monsterBack == 1){
+                     if(progress == 60,59,58 && monsterBack == 1){
                         monsteraniback(73, 48)
                       monsterPlace = 3;
                       monsterBack = 2;
                       }
                       console.log(monsterPlace, monsterBack)
                       return monsterPlace, monsterBack;
-                      
 
+                  // STAGE 4 starts here
                   }
                   else if (progress > 61 && progress <= 87)
                   {
@@ -152,36 +152,33 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text4.style.display = "block";
                       text5.style.display = "none";
 
-                      if(progress == 62 && monsterPlace == 3 ){
+                      if(progress == 66,67,68 && monsterPlace == 3 ){
                         monsterani(48, 73)
                         monsterPlace = 4;
                         monsterBack = 1;
                         }
-                      if(progress == 87 && monsterBack == 0){
-                        monsteraniback(87, 73)
+                      if(progress == 85,86,87 && monsterBack == 0){
+                        monsteraniback(97, 73)
                         monsterPlace = 4;
                         monsterBack = 1;
                       }
                         console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
+                      // FINAL STAGE starts here
+                      }
+                      else if (progress > 88)
+                      {
+                      dot5.style.display = "block";
+                      text5.style.display = "block";
 
-                  }
-                  else if (progress > 88)
-                  {
-                  dot5.style.display = "block";
-                  text5.style.display = "block";
-
-                  if(monsterPlace == 4){
-                  monsterani(73, 97)
-                  monsterPlace = 5
-                  monsterBack = 0
-                  console.log(monsterPlace, monsterBack)
-                  return monsterPlace, monsterBack;
-                  }
-                    
-                    
-                  
-                  }                 
+                      if(monsterPlace == 4){
+                      monsterani(73, 97)
+                      monsterPlace = 5
+                      monsterBack = 0
+                      console.log(monsterPlace, monsterBack)
+                      return monsterPlace, monsterBack;
+                      }
+              }                 
         }
 
 
