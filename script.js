@@ -36,6 +36,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         //get CSS monster percentage and turn it into number
         let monster = document.getElementById("monsteranimation");
 
+
         // turn the scroll percentage from string to number
         let progressDiv = (document.getElementById("progress-bar"))
         let progressString = progressDiv.style.width
