@@ -33,49 +33,115 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         let text4 = document.getElementById("progress-text4")
         let text5 = document.getElementById("progress-text5")
 
+        //get CSS monster percentage and turn it into number
+        let monster = document.getElementById("monsteranimation");
+
         // turn the scroll percentage from string to number
         let progressDiv = (document.getElementById("progress-bar"))
         let progressString = progressDiv.style.width
-        let progress = Number.parseInt(progressString) 
-        console.log(typeof(progress))
-        console.log(progress) 
+        let progress = Number.parseInt(progressString)
+
+        //Monster Animation function declaration
+        let id = null;
+        function monsterani(start, stop) {   
+          let pos = start;
+          clearInterval(id);
+          id = setInterval(frame, 10);
+          function frame() {
+            if (pos == stop) {
+              clearInterval(id);
+            } else {
+              pos++;
+              monster.style.left = pos + '%';
+            }
+          }
+        } 
+                   let monsterPlace = 0;
+                   let monsterBack = 0;
 
                   // regulates when the things appears
                   
                   if(progress > -1 && progress <= 11) 
                   {
-                  dot2.style.display = "none";
+                      dot2.style.display = "none";
+                      text2.style.display = "none";
 
-                  text2.style.display = "none";
+                      if(monsterBack == 5 ){
+                        monsterani(11, 1)
+                        monsterBack = 0;
+                        return monsterBack;
+                      }
+
+
                   }
                   else if(progress > 11 && progress <= 35)
                   {
-                  dot2.style.display = "block";
-                  dot3.style.display = "none";
+                      dot2.style.display = "block";
+                      dot3.style.display = "none";
 
-                  text2.style.display = "block";
-                  text3.style.display = "none";
+                      text2.style.display = "block";
+                      text3.style.display = "none";
+
+                      if(monster.style.left == 0){
+                      monsterani(11, 22)
+                      return monsterPlace = 2;
+                      }
+                      if(monsterBack == 3 ){
+                        monsterani(22, 11)
+                        return monsterBack = 4;
+                      }
+                
+
                   }
                   else if(progress > 35 && progress <= 61)
                   {
-                  dot3.style.display = "block";
-                  dot4.style.display = "none";
+                      dot3.style.display = "block";
+                      dot4.style.display = "none";
 
-                  text3.style.display = "block";
-                  text4.style.display = "none";
+                      text3.style.display = "block";
+                      text4.style.display = "none";
+
+                      if(monsterPlace == 2){
+                      monsterani(22, 48)
+                      return monsterPlace = 3
+                      }
+                      if(monsterBack == 2 ){
+                        monsterani(48, 22)
+                        return monsterBack = 3
+                      }
+
                   }
                   else if (progress > 61 && progress <= 87)
                   {
-                  dot4.style.display = "block";
-                  dot5.style.display = "none";
+                      dot4.style.display = "block";
+                      dot5.style.display = "none";
 
-                  text4.style.display = "block";
-                  text5.style.display = "none";
+                      text4.style.display = "block";
+                      text5.style.display = "none";
+
+                      if(monsterPlace == 3 ){
+                        monsterani(48, 73)
+                        return monsterPlace = 4
+                      }
+                      if(monsterBack == 1 ){
+                        monsterani(73, 48)
+                        return monsterBack = 2
+                      }
+
                   }
                   else if (progress > 88)
                   {
                   dot5.style.display = "block";
-
                   text5.style.display = "block";
+
+                  if(monsterplace == 4){
+                    monsterani(73, 97)
+                    return monsterBack = 1
+                    
+                    
+                  }
                   }                 
       }
+
+
+      

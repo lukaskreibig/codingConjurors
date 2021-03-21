@@ -76,7 +76,7 @@
 /* forces the bar to the bottom */
 
 #placeholder {
-  height: 87vh;
+  height: 80vh;
   width: 100vw;
 }
 
@@ -84,11 +84,29 @@
 
 #progress {
   width: 80vw;
-  height: 8%;
+  height: 15vh;
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  text-align: center;
-  font-size: 25px;
+}
+
+#progress-flex {
+  display: flex;
+  justify-content: row;
+  flex-wrap: nowrap;
+}
+
+/* regulates the monster in the progress bar*/
+#monstercontainer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
+
+#monsteranimation {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 1%;
 }
 
 /* regulates the progress bar */
@@ -100,8 +118,7 @@
   height: 8px;
   background-color: darkmagenta;
   position: absolute;
-  margin-top: 0.4%;
-  top: 1;
+  top: 85px;
   left: 0;
 }
 
@@ -113,9 +130,8 @@
   width: 20px;
   background-color: darkmagenta;
   position: absolute;
-  top: 1;
-  left: 0;
-  margin-bottom: 1%;
+  top: 80px;
+  left: 3%;
   /* fade in effect for different browser */
   animation: fadeIn ease 1.5s;
   -webkit-animation: fadeIn ease 1.5s;
@@ -229,3 +245,7 @@
 }
 
 /* progress bar css ends here */
+
+/* monster animation starts here */
+
+/* monster animation ends here*/
