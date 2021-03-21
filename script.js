@@ -1,15 +1,4 @@
-/*//Tarot cards
-const card = document.getElementsByClassName('.card');
-//const tarotContainer = document.getElementsByClassName('.tarot-container');
-
-
-    card.addEventListener( 'click', function() => {
-           card.classList.toggle('is-flipped')
-      });
-
-
-//end tarot cards*/
-
+//Tarot cards
 const card = document.querySelectorAll('.card');
 
 card.forEach((card) => {
@@ -17,3 +6,5 @@ card.forEach((card) => {
           card.classList.toggle("is-flipped");
      });
 });
+
+//end tarot cards
