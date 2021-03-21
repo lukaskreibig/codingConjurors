@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
+/* import font */
+
+* {
+  font-size: 100%;
+  font-family: "VT323", monospace;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+
+  /* main content */
+}
 .slide-one,
 .slide-two,
 .slide-three,
@@ -8,13 +21,7 @@
   height: 100vh;
   width: 100vw;
 }
-.inner-wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 500vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-}
+
 .slide-one {
   background: #efdefe;
 }
@@ -22,8 +29,77 @@
 .slide-two{
 background-image: url("./assets/Bluedabade.jpg");
 background-position: center;
-object-fit: cover;
+background-repeat: no-repeat;
+background-size: cover;
 }
+
+/* Slide two Css */
+
+/* Container */
+.sortingSocks {
+  margin: 6%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 300px 200px;
+  grid-gap: 50px;
+  font-family: 'VT323', monospace;
+  }
+  
+  /* Socks image - column 1, row 1 */
+  .element1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  
+  }
+  
+  /* Wizard - column 1, row 2 */
+  .element2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Wizard's speech bubble */
+  .centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 130%;
+  }
+
+   /*  HEX colours from palette 
+   #C2F8CB; - bold light green #1
+   #B3E9C7 - warmer, lighter green
+   #5603AD - dark cold purple
+   #8367C7 - lighter cold purple
+   #47026C - de facto bg colour, warm dark purple
+   #C86BFA - lighter bright purple;
+   #E4AFFF - lilac ; 
+   #F5CF05 - gold ;
+   #FBE300 - yellow (lighter);
+   */ 
+
+   /* Sorting Socks Answer Box */
+  .element3 {
+    background-color: #e4afff63; 
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+    line-height: 1.6;
+    padding: 10%;
+    font-size: 2vw;
+    color: white;
+  }
+  /* End of Slide two CSS */
 
 .slide-three {
   background: #0bbaa0;
@@ -34,6 +110,18 @@ object-fit: cover;
 .slide-five {
   background: #ab87d4;
 }
+
+/* outer wrapper is transformed for sidescroll
+     inner wrapper is transformed back */
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 500vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
 .outer-wrapper {
   width: 100vh;
   height: 100vw;
@@ -44,76 +132,190 @@ object-fit: cover;
   position: absolute;
   left: 0px;
   top: 0px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-::-webkit-scrollbar {
+
+/* progress bar CSS starts here */
+
+/* container for flexbox */
+
+#progress-container {
+  height: 98vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* forces the bar to the bottom */
+
+#placeholder {
+  height: 80vh;
+  width: 100vw;
+}
+
+/* container to make progress bar sticky */
+
+#progress {
+  width: 80vw;
+  height: 15vh;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+}
+
+#progress-flex {
+  display: flex;
+  justify-content: row;
+  flex-wrap: nowrap;
+}
+
+/* regulates the monster in the progress bar*/
+#monstercontainer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
+
+#monsteranimation {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 1%;
+}
+
+/* regulates the progress bar */
+
+#progress-bar {
+  transition: width 0.1s;
+  border-radius: 16px;
+  width: 0%;
+  height: 8px;
+  background-color: #e4afff8a;
+  position: absolute;
+  top: 85px;
+  left: 0;
+}
+
+/* regulates the dots on the progress bar */
+
+.progress-dot {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #e4afff;
+  position: absolute;
+  top: 80px;
+  left: 3%;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+}
+
+#dot2 {
+  left: 24%;
   display: none;
 }
 
-/* Anca's Css */
-
-.sortingSocks {
-margin: 6%;
-display: grid;
-grid-template-columns: 1fr 2fr;
-grid-template-rows: 300px 200px;
-grid-gap: 50px;
-font-family: 'VT323', monospace;
-}
-
-.element1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-
-}
-
-.element2 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.centered {
-  position: absolute;
-  top: 40%;
+#dot3 {
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 130%;
+  display: none;
 }
- /* 
- 
- #C2F8CB; - hex for green #1
- #B3E9C7 - warmer, lighter green
- #5603AD - dark cold purple
- #8367C7 - lighter cold purple
- #47026C - de facto bg colour, warm dark purple
- #C86BFA - lighter bright purple;
- #E4AFFF - lilac ; 
- #F5CF05 - gold ;
- #FBE300 - yellow (lighter);
 
- */ 
-.element3 {
-  background-color: #e4afff63; 
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  text-align: center;
-  line-height: 1.6;
-  padding: 10%;
-  font-size: 1vw;
+#dot4 {
+  left: 75%;
+  display: none;
+}
+
+#dot5 {
+  left: 99%;
+  display: none;
+}
+
+
+.progress-text {
   color: white;
+  position: absolute;
+  bottom: 0;
+  font-size: 22px;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  margin-bottom: 15px;
 }
 
-#socks {
-  max-width: 100%; 
-  height: auto;
+#progress-text2 {
+  left: 21%;
+  display: none;
 }
+
+#progress-text3 {
+  left: 48%;
+  display: none;
+}
+
+#progress-text4 {
+  left: 74%;
+  display: none;
+}
+
+#progress-text5 {
+  left: 96.5%;
+  white-space: nowrap;
+  display: none;
+}
+
+/* regulates the fadeIn for the progressbar DOTS */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* progress bar css ends here */
