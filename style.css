@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
-/*Scrolling function*/
 .slide-one,
 .slide-two,
 .slide-three,
@@ -52,10 +51,10 @@
 
 
 .tarot-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+  margin-left: 500px;
   min-height: 100vh;
   cursor: grab;
 }
@@ -98,5 +97,6 @@
   transform-origin: center right; 
 }
 /*End tarot cards*/
+
 
 
