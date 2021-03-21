@@ -1,3 +1,4 @@
+// get the wrapper for onscroll and calculation of the progres bar width
 let innerWrapper = document.querySelector('.inner-wrapper');
 let outerWrapper = document.querySelector('.outer-wrapper')
 
@@ -21,7 +22,7 @@ let outerWrapper = document.querySelector('.outer-wrapper')
         let monsterPlace = 1;
         let monsterBack = -1;
 
-//onscroll start function
+//onscroll start two functions
 outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
       //  calculation based on scrolling for the progress bar
@@ -47,8 +48,10 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         let progress = Number.parseInt(progressString)
 
         //Monster Animation function declaration forwards
+        //Interval is doing everyting in steps, if its fast enough
+        // it looks like an animation
         let id = null;
-        function monsterani(start, stop) {   
+        function monsterani(start, stop, operator) {   
           let pos = start;
           clearInterval(id);
           id = setInterval(frame, 18);
@@ -56,29 +59,11 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
             if (pos == stop) {
               clearInterval(id);
             } else {
-              pos++;
+              pos = pos + operator;
               monster.style.left = pos + '%';
             }
           }
         } 
-
-
-        //Monster Animation function declaration backwards
-        let id2 = null;
-        function monsteraniback(start, stop) {   
-          let pos2 = start;
-          clearInterval(id2);
-          id2 = setInterval(frame, 18);
-          function frame() {
-            if (pos2 == stop) {
-              clearInterval(id2);
-            } else {
-              pos2--;
-              monster.style.left = pos2 + '%';
-            }
-          }
-        } 
-
 
                   // regulates when  things appears in STAGE 1
                 
@@ -90,7 +75,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       //regulates flying with a switch + calls flying function
                       if(monsterBack == 1){
-                        monsteraniback(22, 1)
+                        monsterani(22, 1, -1)
                         monsterPlace = 1
                         monsterBack = 0
                         return monsterPlace, monsterBack;
@@ -108,13 +93,13 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       // monster forward to STAGE 2 + change SWITCHES
                       if(progress == 12,13,14 && monsterPlace == 1){
-                        monsterani(1, 22);
+                        monsterani(1, 22, +1);
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
                       // monster backwards to STAGE 2 + change SWITCHES
                       if(progress == 34,33,32 && monsterBack == 2){
-                        monsteraniback(48, 22)
+                        monsterani(48, 22, -1)
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
@@ -132,13 +117,13 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       // monster flies to STAGE 3 + change SWITCHES
                      if(progress == 36,37,38 && monsterPlace == 2){
-                      monsterani(22, 48)
+                      monsterani(22, 48, +1)
                       monsterPlace = 3;
                       monsterBack = 2;
                      }
                      // monster flies backwards to STAGE 3 + change SWITCHES
                      if(progress == 60,59,58 && monsterBack == 1){
-                        monsteraniback(73, 48)
+                        monsterani(73, 48, -1)
                       monsterPlace = 3;
                       monsterBack = 2;
                       }
@@ -157,13 +142,13 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       // monster flies forwards to STAGE 4 + change SWITCHES
                       if(progress == 66,67,68 && monsterPlace == 3 ){
-                        monsterani(48, 73)
+                        monsterani(48, 73, +1)
                         monsterPlace = 4;
                         monsterBack = 1;
                         }
                       //monster flies backwards to STAGE 4 + change SWITCHES
                       if(progress == 85,86,87 && monsterBack == 0){
-                        monsteraniback(97, 73)
+                        monsterani(97, 73, -1)
                         monsterPlace = 4;
                         monsterBack = 1;
                       }
@@ -179,7 +164,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       //monster flies forwards t STAGE 5 + change SWITCHES
                       if(monsterPlace == 4){
-                      monsterani(73, 97)
+                      monsterani(73, 97, +1)
                       monsterPlace = 5
                       monsterBack = 0
                       return monsterPlace, monsterBack;
