@@ -45,7 +45,6 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         let progressDiv = (document.getElementById("progress-bar"))
         let progressString = progressDiv.style.width
         let progress = Number.parseInt(progressString)
-        console.log(progress)
 
         //Monster Animation function declaration forwards
         let id = null;
@@ -85,7 +84,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                 
                   if(progress > -1 && progress <= 11) 
                   {
-                     //makes text and dots appear / disappear
+                     //makes text and dots disappear
                       dot2.style.display = "none";
                       text2.style.display = "none";
 
@@ -94,88 +93,95 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                         monsteraniback(22, 1)
                         monsterPlace = 1
                         monsterBack = 0
-                        console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
                         }   
                   }
                   // STAGE 2 starts here
                   else if(progress > 11 && progress < 35)
                   {
+                      //makes text and dots appear / disappear
                       dot2.style.display = "block";
                       dot3.style.display = "none";
 
                       text2.style.display = "block";
                       text3.style.display = "none";
 
+                      // monster forward to STAGE 2 + change SWITCHES
                       if(progress == 12,13,14 && monsterPlace == 1){
                         monsterani(1, 22);
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
+                      // monster backwards to STAGE 2 + change SWITCHES
                       if(progress == 34,33,32 && monsterBack == 2){
                         monsteraniback(48, 22)
                         monsterPlace = 2;
                         monsterBack = 1;
                       }
-                        console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
                   }
                   // STAGE 3 starts here
                   else if(progress > 35 && progress < 61)
                   {
+                      //makes text and dots appear / disappear
                       dot3.style.display = "block";
                       dot4.style.display = "none";
 
                       text3.style.display = "block";
                       text4.style.display = "none";
 
+                      // monster flies to STAGE 3 + change SWITCHES
                      if(progress == 36,37,38 && monsterPlace == 2){
                       monsterani(22, 48)
                       monsterPlace = 3;
                       monsterBack = 2;
                      }
+                     // monster flies backwards to STAGE 3 + change SWITCHES
                      if(progress == 60,59,58 && monsterBack == 1){
                         monsteraniback(73, 48)
                       monsterPlace = 3;
                       monsterBack = 2;
                       }
-                      console.log(monsterPlace, monsterBack)
                       return monsterPlace, monsterBack;
 
                   // STAGE 4 starts here
                   }
                   else if (progress > 61 && progress <= 87)
                   {
+                      //makes text and dots appear / disappear
                       dot4.style.display = "block";
                       dot5.style.display = "none";
 
                       text4.style.display = "block";
                       text5.style.display = "none";
 
+                      // monster flies forwards to STAGE 4 + change SWITCHES
                       if(progress == 66,67,68 && monsterPlace == 3 ){
                         monsterani(48, 73)
                         monsterPlace = 4;
                         monsterBack = 1;
                         }
+                      //monster flies backwards to STAGE 4 + change SWITCHES
                       if(progress == 85,86,87 && monsterBack == 0){
                         monsteraniback(97, 73)
                         monsterPlace = 4;
                         monsterBack = 1;
                       }
-                        console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
-                      // FINAL STAGE starts here
+                      
+                        // FINAL STAGE starts here
                       }
                       else if (progress > 88)
                       {
+                      //makes text and dots appear
                       dot5.style.display = "block";
                       text5.style.display = "block";
 
+                      //monster flies forwards t STAGE 5 + change SWITCHES
                       if(monsterPlace == 4){
                       monsterani(73, 97)
                       monsterPlace = 5
                       monsterBack = 0
-                      console.log(monsterPlace, monsterBack)
                       return monsterPlace, monsterBack;
                       }
               }                 

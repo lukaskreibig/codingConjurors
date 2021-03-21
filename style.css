@@ -197,7 +197,7 @@
   display: none;
 }
 
-/* regulates the fadeIn */
+/* regulates the fadeIn for the progressbar DOTS */
 
 @keyframes fadeIn {
   0% {
@@ -245,7 +245,3 @@
 }
 
 /* progress bar css ends here */
-
-/* monster animation starts here */
-
-/* monster animation ends here*/
