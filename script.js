@@ -1,6 +1,23 @@
 let innerWrapper = document.querySelector('.inner-wrapper');
 let outerWrapper = document.querySelector('.outer-wrapper')
 
+
+        // get all the CSS for the dots
+        let dot2 = document.getElementById("dot2")
+        let dot3 = document.getElementById("dot3")
+        let dot4 = document.getElementById("dot4")
+        let dot5 = document.getElementById("dot5")
+
+        // get all the CSS for the text
+        let text2 = document.getElementById("progress-text2")
+        let text3 = document.getElementById("progress-text3")
+        let text4 = document.getElementById("progress-text4")
+        let text5 = document.getElementById("progress-text5")
+
+        let monster = document.getElementById("monsteranimation")
+
+        let monsterPlace = 0;
+
 //onscroll start function
 outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
@@ -21,26 +38,11 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
       // this function handles the appearance of the progress dots
       progressStep = () => {
 
-        // get all the CSS for the dots
-        let dot2 = document.getElementById("dot2")
-        let dot3 = document.getElementById("dot3")
-        let dot4 = document.getElementById("dot4")
-        let dot5 = document.getElementById("dot5")
-
-        // get all the CSS for the text
-        let text2 = document.getElementById("progress-text2")
-        let text3 = document.getElementById("progress-text3")
-        let text4 = document.getElementById("progress-text4")
-        let text5 = document.getElementById("progress-text5")
-
-        //get CSS monster percentage and turn it into number
-        let monster = document.getElementById("monsteranimation");
-
-
         // turn the scroll percentage from string to number
         let progressDiv = (document.getElementById("progress-bar"))
         let progressString = progressDiv.style.width
         let progress = Number.parseInt(progressString)
+        console.log(progress)
 
         //Monster Animation function declaration
         let id = null;
@@ -57,8 +59,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
             }
           }
         } 
-                   let monsterPlace = 0;
-                   let monsterBack = 0;
+
 
                   // regulates when the things appears
                   
@@ -66,15 +67,14 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                   {
                       dot2.style.display = "none";
                       text2.style.display = "none";
-
-                      if(monsterBack == 5 ){
-                        monsterani(11, 1)
-                        monsterBack = 0;
-                        return monsterBack;
+                      
+                      if(monsterPlace == 0){
+                        return  monsterPlace = 1;
                       }
 
-
                   }
+
+
                   else if(progress > 11 && progress <= 35)
                   {
                       dot2.style.display = "block";
@@ -83,17 +83,13 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text2.style.display = "block";
                       text3.style.display = "none";
 
-                      if(monster.style.left == 0){
-                      monsterani(11, 22)
-                      return monsterPlace = 2;
+                      if(monsterPlace == 1){
+                        monsterani(1, 22)
+                        return monsterPlace = 2
                       }
-                      if(monsterBack == 3 ){
-                        monsterani(22, 11)
-                        return monsterBack = 4;
-                      }
-                
-
                   }
+            
+                   
                   else if(progress > 35 && progress <= 61)
                   {
                       dot3.style.display = "block";
@@ -102,14 +98,14 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text3.style.display = "block";
                       text4.style.display = "none";
 
-                      if(monsterPlace == 2){
+                     if(monsterPlace == 2){
                       monsterani(22, 48)
                       return monsterPlace = 3
                       }
-                      if(monsterBack == 2 ){
-                        monsterani(48, 22)
-                        return monsterBack = 3
-                      }
+                      // if(monsterBack == 2 ){
+                      //   monsterani(48, 22)
+                      //   return monsterBack = 3
+                      // }
 
                   }
                   else if (progress > 61 && progress <= 87)
@@ -124,10 +120,10 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                         monsterani(48, 73)
                         return monsterPlace = 4
                       }
-                      if(monsterBack == 1 ){
-                        monsterani(73, 48)
-                        return monsterBack = 2
-                      }
+                      // if(monsterBack == 1 ){
+                      //   monsterani(73, 48)
+                      //   return monsterBack = 2
+                      // }
 
                   }
                   else if (progress > 88)
@@ -135,14 +131,15 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                   dot5.style.display = "block";
                   text5.style.display = "block";
 
-                  if(monsterplace == 4){
-                    monsterani(73, 97)
-                    return monsterBack = 1
-                    
-                    
+                  if(monsterPlace == 4){
+                  monsterani(73, 97)
+                  return monsterPlace = 5
                   }
+                    
+                    
+                  
                   }                 
-      }
+        }
 
 
       
