@@ -1,11 +1,23 @@
 //Tarot cards
-const card = document.querySelector('.card');
-const tarotContainer = document.querySelector('.tarot-container');
+const card = document.querySelectorAll('.card__inner');
 
-for (let i=0; i<=3; i++) {
-    card[i].addEventListener( 'click', function() => {
-           card[i].classList.toggle('is-flipped')
-      });
-}
+card.forEach((card) => {
+    card.classList.toggle("is-flipped");
+});
+});
+
+//const scene = document.querySelectorAll('.scene');
+
+//for (let i=0; i<=scene.length; i++) {
+    //card[i].addEventListener('click', function() => {
+           //card[i].classList.toggle('is-flipped')
+      //});
+//}
+
+
+//card.addEventListener('click', function() {
+    //card.classList.toggle('is-flipped');
+//});
+
 
 //end tarot cards
