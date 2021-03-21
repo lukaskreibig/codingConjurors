@@ -16,8 +16,8 @@ let outerWrapper = document.querySelector('.outer-wrapper')
 
         let monster = document.getElementById("monsteranimation")
 
-        let monsterPlace = 0;
-        let monsterBack = 0;
+        let monsterPlace = 1;
+        let monsterBack = -1;
 
 //onscroll start function
 outerWrapper.onscroll = () => { progressBar(); progressStep()};
@@ -50,7 +50,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         function monsterani(start, stop) {   
           let pos = start;
           clearInterval(id);
-          id = setInterval(frame, 10);
+          id = setInterval(frame, 18);
           function frame() {
             if (pos == stop) {
               clearInterval(id);
@@ -67,7 +67,7 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         function monsteraniback(start, stop) {   
           let pos2 = start;
           clearInterval(id2);
-          id2 = setInterval(frame, 10);
+          id2 = setInterval(frame, 18);
           function frame() {
             if (pos2 == stop) {
               clearInterval(id2);
@@ -85,17 +85,18 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                   {
                       dot2.style.display = "none";
                       text2.style.display = "none";
-                      
-                      if(monsterPlace == 0){
-                        monsterPlace = 1;
-                        monsterBack = 5;
-                        return monsterPlace, monsterBack;
-                      }
 
+                      if(monsterBack == 1){
+                        monsteraniback(22, 1)
+                        monsterPlace = 1
+                        monsterBack = 0
+                        console.log(monsterPlace, monsterBack)
+                        return monsterPlace, monsterBack;
+                        }   
                   }
 
 
-                  else if(progress > 11 && progress <= 35)
+                  else if(progress > 11 && progress < 35)
                   {
                       dot2.style.display = "block";
                       dot3.style.display = "none";
@@ -103,16 +104,24 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text2.style.display = "block";
                       text3.style.display = "none";
 
-                      if(monsterPlace == 1){
+                      if(progress == 12 && monsterPlace == 1){
                         monsterani(1, 22);
                         monsterPlace = 2;
-                        monsterBack = 4;
-                        return monsterPlace, monsterBack;
+                        monsterBack = 1;
                       }
+                      if(progress == 34 && monsterBack == 2){
+                        monsteraniback(48, 22)
+                        monsterPlace = 2;
+                        monsterBack = 1;
+                      }
+                  
+                        console.log(monsterPlace, monsterBack)
+                        return monsterPlace, monsterBack;
+                      
                   }
             
                    
-                  else if(progress > 35 && progress <= 61)
+                  else if(progress > 35 && progress < 61)
                   {
                       dot3.style.display = "block";
                       dot4.style.display = "none";
@@ -120,12 +129,19 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
                       text3.style.display = "block";
                       text4.style.display = "none";
 
-                     if(progress == 35 && monsterPlace == 2){
+                     if(progress == 36 && monsterPlace == 2){
                       monsterani(22, 48)
                       monsterPlace = 3;
                       monsterBack = 2;
-                      return monsterPlace, monsterBack;
+                     }
+                     if(progress == 60 && monsterBack == 1){
+                        monsteraniback(73, 48)
+                      monsterPlace = 3;
+                      monsterBack = 2;
                       }
+                      console.log(monsterPlace, monsterBack)
+                      return monsterPlace, monsterBack;
+                      
 
                   }
                   else if (progress > 61 && progress <= 87)
@@ -138,12 +154,15 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                       if(progress == 62 && monsterPlace == 3 ){
                         monsterani(48, 73)
+                        monsterPlace = 4;
+                        monsterBack = 1;
                         }
                       if(progress == 87 && monsterBack == 0){
                         monsteraniback(87, 73)
-                      }
                         monsterPlace = 4;
                         monsterBack = 1;
+                      }
+                        console.log(monsterPlace, monsterBack)
                         return monsterPlace, monsterBack;
 
                   }
@@ -154,8 +173,9 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
 
                   if(monsterPlace == 4){
                   monsterani(73, 97)
-                  monsterPlace = 3
+                  monsterPlace = 5
                   monsterBack = 0
+                  console.log(monsterPlace, monsterBack)
                   return monsterPlace, monsterBack;
                   }
                     
