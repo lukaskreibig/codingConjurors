@@ -34,11 +34,23 @@
 
 /*Tarot cards*/
 
-.tarot-container {
+.tarot-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  
+}
+
+.wizard1 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.tarot-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 50px;
-  margin-left: 500px;
   min-height: 100vh;
   cursor: grab;
 }
