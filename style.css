@@ -57,7 +57,7 @@
   grid-row-start: 2;
   grid-row-end: 3;
   position: relative;
-  justify-items: center 
+  justify-items: center;
 }
 
 .speech3 {
@@ -129,7 +129,7 @@
   grid-row-start: 2;
   grid-row-end: 3;
   background-color: #e4afff63;
-  text-align: center;
+  text-align: justify;
   line-height: 1.6;
   font-size: 2vw;
   color: black;
@@ -138,8 +138,79 @@
 /*End prophecy box*/
 
 .slide-four {
-  background: #00dfdf;
+  background-image: url("assets/slide-four-background.png");
+  background-size: cover;
 }
+
+/*Start coding lesson*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  margin-left: 6%;
+  margin-top: 8%;
+  margin-right: 6%;
+  margin-bottom: 8%;
+  justify-items: center;
+  grid-gap: 5px;
+}
+
+.wizard3 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: relative;
+  justify-items: center;
+}
+
+.lesson-grid {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  background-color: #e4afff63;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 2vw;
+  color: black;
+  position: relative
+  
+
+}
+
+.lesson-textbox{
+  margin-top: 10%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-top: 6%;
+  margin-left: 6%;
+}
+
+.img1{
+  margin-top: 10%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.img2{
+  margin-top: 10%;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.img3{
+  margin-top: 10%;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
 .slide-five {
   background: #34df00;
 }
