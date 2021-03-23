@@ -5,7 +5,7 @@ const card = document.querySelectorAll('.card');
  const prophecy = [
   {future: 'bright', text:'Thanks to incredible technological advances in agriculture, medicine and power-sources, the world is green, clean and serene. We all live together in peaceful harmony, and thanks to the four-day working week and universal income, we work on projects that we enjoy, and have plenty of time to spend with family, friends and other frivolous pursuits.'},
   {future: 'bleak', text:'We thought AI and robots would improve our lives, but instead they have robbed us of our livelihoods. The few of us who are lucky enough to have jobs work on maintaining the robots in factory lines. The rest of us hustle and barter to survive.'},
- {future: 'adventurous', text:'The future is already here. We may only be roving on Mars today, but tomorrow our passports will include a planet of birth and will be setting up trade agreements with alien species. Let us hope that these foreign traders are not tempted to enslave us all!'}];
+ {future: 'adventurous', text:'The future is already here. We may only be roving on Mars today, but tomorrow our passports will include a planet of birth and we will be setting up trade agreements with alien species. Let us hope that these foreign traders are not tempted to enslave us all!'}];
 
 const cardProphecy = document.querySelector('.cards-prophecy');
 
