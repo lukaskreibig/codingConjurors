@@ -174,7 +174,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
   background-color: #e4afff63;
   text-align: justify;
   line-height: 1.6;
@@ -189,6 +189,8 @@
   margin-top: 10%;
   grid-column-start: 1;
   grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
   margin-top: 6%;
   margin-left: 6%;
 }
@@ -197,18 +199,24 @@
   margin-top: 10%;
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .img2{
   margin-top: 10%;
   grid-column-start: 3;
   grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .img3{
   margin-top: 10%;
   grid-column-start: 2;
   grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .slide-five {
