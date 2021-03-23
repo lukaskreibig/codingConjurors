@@ -26,12 +26,12 @@
 .slide-one {
   background: lightblue;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  grid-template-rows: 0.5fr 1.1fr 1fr 0.7fr 0.8fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.2fr 0.9fr 1.1fr 0.7fr 0.8fr;
 
-  /* background-image: url("codingconjuror.png");
+  background-image: url("grass.png");
   background-size: cover;
-  background-position: center; */
+  background-position: top; */
 }
 
 .slide-one-element {
@@ -49,27 +49,34 @@
 }
 
 figure {
-  width: 64px;
+  width: 80px;
 }
 
 figcaption {
-  font-size: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#anca {
+color: magenta;
+}
+
+#anna {
+color:gold;
+}
+
+#lukas {
+color:lightblue;
 }
 
 #characters {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
-  height: 173px;
+  height: 190px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-content: flex-end;
-}
-
-#earth {
-  grid-column: 1 / 4;
-  grid-row: 5 / 6;
-  background-color: darkgreen;
 }
 
 .slide-two {
