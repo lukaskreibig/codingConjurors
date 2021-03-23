@@ -146,8 +146,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   margin-left: 6%;
   margin-top: 8%;
   margin-right: 6%;
@@ -156,25 +156,29 @@
   grid-gap: 5px;
 }
 
-.wizard3 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  position: relative;
+.wizard4 {
+  
   justify-items: center;
+}
+
+.speech4 {
+  margin-top:50%;
+  text-align: center;
+  justify-items: center;
+  color: black;
+  font-size: 150%;
 }
 
 .lesson-grid {
   grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   
-  display: grid;
+  /* display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 20px; */
   background-color: #e4afff63;
   text-align: justify;
   line-height: 1.6;
@@ -192,10 +196,12 @@
   grid-row-start: 1;
   grid-row-end: 3;
   margin-top: 6%;
+  margin-right: 6%;
+  margin-bottom: 6%;
   margin-left: 6%;
 }
 
-.img1{
+/* .img1{
   margin-top: 10%;
   grid-column-start: 2;
   grid-column-end: 3;
@@ -217,7 +223,7 @@
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
-}
+} */
 
 .slide-five {
   background: #34df00;
