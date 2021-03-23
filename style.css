@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 /* import font */
 
@@ -24,7 +25,42 @@
 
 .slide-one {
   background: #efdefe;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: 0.5fr 1.1fr 1fr 1fr 0.6fr;
+  background-image: url("forest.png");
+  background-size: cover;
+  background-position: center;
 }
+
+.slide-one-element {
+  text-align: center;
+}
+#conjurortitle {
+  font-size: 60px;
+  line-height: 90%;
+  font-family: "Press Start 2P", cursive;
+}
+#conjurorintro {
+  font-size: 30px;
+  line-height: 70%;
+}
+
+figure {
+  width: 64px;
+}
+
+figcaption {
+  font-size: 20px;
+}
+
+#characters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: flex-end;
+}
+
 .slide-two {
   background: #a3f3d3;
 }
