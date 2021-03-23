@@ -23,13 +23,15 @@
 }
 
 .slide-one {
-  background: #efdefe;
+  background: #efdefe; 
 }
+
 .slide-two {
   background: #a3f3d3;
 }
+
 .slide-three {
-  background-image: url("assets/slide-3-background.png");
+  background-image:url("assets/slide-3-background.png");
   background-size: cover;
 }
 
@@ -38,7 +40,7 @@
 .tarot-page-grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 3fr 2fr 1fr; 
+  grid-template-rows: 3fr 2fr 1fr 1fr; 
   margin-left: 6%;
   margin-top: 8%;
   margin-right: 6%;
@@ -64,8 +66,8 @@
   grid-row-start: 2;
   grid-row-end: 3;
   justify-items: center;
-  color: white;
-  font-size: 130%;
+  color: black;
+  font-size: 150%;
 }
 
 /*Tarot cards*/
@@ -89,6 +91,7 @@
 .card {
   width: 100%;
   height: 100%;
+  border-radius: 15px;
   position: relative;
   transition: transform 1.5s;
   transform-style: preserve-3d;
@@ -101,12 +104,12 @@
   backface-visibility: hidden;
 }
 
-.card__face--front {
-  background: #E4AFFF;
-}
+/*.card__face--front {
+  border-radius: 15px;
+}*/
 
 .card__face--back {
-  background: #E4AFFF;
+  
   transform: rotateY(180deg);
 }
 
@@ -129,7 +132,7 @@
   text-align: center;
   line-height: 1.6;
   font-size: 2vw;
-  color: white;
+  color: black;
 }
 
 /*End prophecy box*/

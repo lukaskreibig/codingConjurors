@@ -1,13 +1,30 @@
-//Tarot cards
+// //Tarot cards page - Flip function
 const card = document.querySelectorAll('.card');
 
-card.forEach((card) => {
-     card.addEventListener("click", () => {
-          card.classList.toggle("is-flipped");
-     });
-});
 
-//end tarot cards
+ const prophecy = [
+  {future: 'bright', text:'Thanks to incredible technological advances in agriculture, medicine and power-sources, the world is green, clean and serene. We all live together in peaceful harmony, and thanks to the four-day working week and universal income, we work on projects that we enjoy, and have plenty of time to spend with family, friends and other frivolous pursuits.'},
+  {future: 'bleak', text:'We thought AI and robots would improve our lives, but instead they have robbed us of our livelihoods. The few of us who are lucky enough to have jobs work on maintaining the robots in factory lines. The rest of us hustle and barter to survive.'},
+ {future: 'adventurous', text:'The future is already here. We may only be roving on Mars today, but tomorrow our passports will include a planet of birth and will be setting up trade agreements with alien species. Let us hope that these foreign traders are not tempted to enslave us all!'}];
+
+const cardProphecy = document.querySelector('.cards-prophecy');
+
+
+
+// //function to flip cards
+ let countTarot = 0;
+card.forEach((card) => {
+   card.addEventListener("click", () => {
+           card.classList.toggle("is-flipped");
+           countTarot = countTarot + 1;
+      if (countTarot === 3) {
+         let j = Math.floor((0 + Math.random() * (prophecy.length-1)));
+     cardProphecy.innerHTML = `The cards have revealed a future and it is ${prophecy[j].future}! ${prophecy[j].text}`
+  
+       }
+           }); 
+          
+   });
 
 //Progress bar Javascript
 // get the wrapper for onscroll and calculation of the progres bar width
