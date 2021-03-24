@@ -41,6 +41,52 @@
   background-size: cover;
 }
 
+/* */
+/* Start of Battle CSS */
+
+.battleGrid {
+  display: grid;
+  height: 95%;
+  margin-bottom: auto;
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 3fr 1.5fr;
+  grid-gap: 2%;
+}
+.quiz {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: rgba(0, 255, 200, 0.596);
+}
+
+.wiz {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: rgba(255, 0, 119, 0.623);
+  
+}
+
+#wizardIdleBattle {
+  height: 90%;
+  width: 90%;
+  padding: 0%;
+  padding-top: 0%;
+}
+
+.evilWiz {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-color: rgba(183, 113, 248, 0.521);
+}
+
+#evilWizardIdle {
+  height: 110%;
+  width: 55%;
+}
+/* End of Battle CSS */
+
 /* outer wrapper is transformed for sidescroll
      inner wrapper is transformed back */
 

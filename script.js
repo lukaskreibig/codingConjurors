@@ -1,3 +1,17 @@
+//Slide Five - Battle Javascript
+
+
+
+
+
+
+
+
+
+
+
+//End of Slide Five Javascript
+
 // get the wrapper for onscroll and calculation of the progres bar width
 let innerWrapper = document.querySelector('.inner-wrapper');
 let outerWrapper = document.querySelector('.outer-wrapper')
