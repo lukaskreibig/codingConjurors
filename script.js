@@ -1,3 +1,38 @@
+
+// Sorting Socks Javascript Funtimes
+
+// An array of objects with Job names and descriptions
+const careers = [
+    {title: "Front-End Developer", text: "Front-End Description"}, 
+    {title: "Back-End Developer", text: "Back-End Description"}, 
+    {title: "Software Engineer", text: "Software Engineer Description"}, {title: "CEO at Facebook", text: "CEO Description"},
+    {title: "Product Manager at Google", text: "PM Description"},
+    {title: "Data Analyst", text: "Data Analyst Description"},
+    {title: "Supreme AI Overlord", text: "AI Overlord Description"}]
+
+   
+let button = document.querySelector("button");
+let answer = document.querySelector("h1");
+let speech = document.getElementsByClassName("sortingSocks");
+let speechBubble = document.getElementById("speech");
+
+//When the first click on the page is made(i.e. the button is clicked), the wizard's speech will change
+speech[0].addEventListener('click', () => {
+    speechBubble.innerHTML = "...unless you click again!";
+})
+
+//Random answer given when button is clicked
+button.onclick = function(){
+ 
+    let i = Math.floor(0 + Math.random()*(careers.length + 1 - 0))
+	answer.innerHTML = `Your destiny is to become a ${careers[i].title}! ${careers[i].text}`;
+    
+}
+// End of Slide Two - Sorting Socks - Javascript
+
+
+
+
 //Slide Five - Battle Javascript
 
 //Quiz FUNCTIONS
@@ -164,10 +199,6 @@
 })();
 
 //End of Slide Five Javascript
-
-
-
-
 
 
 
@@ -348,4 +379,5 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         }
 
 
-      
+// End of Progress Bar Javascript      
+
