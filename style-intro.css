@@ -31,6 +31,17 @@
   font-size: 30px;
 }
 
+#button-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 #riddlebox {
   border-radius: 25 50px;
   padding: 10px;
@@ -41,7 +52,7 @@
   font-style: italic;
 }
 
-#riddlebox p {
+#riddlebox2 {
   font-weight: bold;
   color: lightcoral;
   font-style: normal;
@@ -54,23 +65,4 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.animated-text {
-  font-family: monospace;
-  overflow: hidden;
-  height: 1.1em;
-  word-wrap: break-word;
-  white-space: nowrap;
-  animation: typing 4s steps(362) forwards;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 362ch;
-  }
 }
