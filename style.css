@@ -61,6 +61,62 @@
   background-color: rgba(0, 255, 200, 0.596);
 }
 
+/* Quiz Css */
+.question{
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-top: 5%;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flexbox;
+  font-size: 2rem;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+button{
+  position: center;
+  margin-top: 10%;
+  margin-left: 20%;
+	font-size: 22px;
+	background-color:  rgba(183, 113, 248, 0.781);
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+button:hover{
+	background-color:  rgb(41, 1, 78);
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+
+/* End of Quiz Css */
+
 .wiz {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
