@@ -27,7 +27,7 @@
 }
 
 .slide-two{
-background-image: url("./assets/Bluedabade.jpg");
+background-image: url("./assets/BackgroundSorting.png");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -63,7 +63,6 @@ background-size: cover;
     grid-row-end: 3;
     position: relative;
     text-align: center;
-    color: white;
     height: 150%;
   }
   
@@ -99,7 +98,7 @@ background-size: cover;
     line-height: 1.6;
     padding: 10%;
     font-size: 1.5rem;
-    color: white;
+    color: black;
   }
 
   /* Sorting Socks Iphone media query starts here */
