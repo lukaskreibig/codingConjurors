@@ -18,7 +18,7 @@ card.forEach((card) => {
            card.classList.toggle("is-flipped");
            countTarot = countTarot + 1;
       if (countTarot === 3) {
-         let j = Math.floor((0 + Math.random() * (prophecy.length-1)));
+         let j = Math.floor((0 + Math.random() * (prophecy.length)));
      cardProphecy.innerHTML = `The cards have revealed a future and it is ${prophecy[j].future}! ${prophecy[j].text}`
   
        }
