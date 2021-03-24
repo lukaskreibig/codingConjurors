@@ -30,7 +30,7 @@ typeWriter()
 document.getElementById("b1").addEventListener("click", function() {
 
     document.getElementById("riddlebox2").innerHTML = "";
-    document.getElementById("riddlebox2").innerHTML = "WRONG WRONG WRONG!" + "<p>" + "Merlin was a legend. But a legend is just ... a legend. And he did NOT reinvent the Internet Magic. Merlin is as old as I am, so how could he invent Internet Magic? Think before you talk - now try again!" +"</p>";
+    document.getElementById("riddlebox2").innerHTML = "WRONG WRONG WRONG! <br> Merlin was a legend. But a legend is just ... a legend. And he did NOT reinvent the Internet Magic. Merlin is as old as I am, so how could he invent Internet Magic? Think before you talk - now try again!";
 
   }); 
 
@@ -60,6 +60,6 @@ dot3.style.display = "none";
 
   document.getElementById("b3").addEventListener("click", function() {
     document.getElementById("riddlebox2").innerHTML = "";
-    document.getElementById("riddlebox2").innerHTML = "Gandalf? <br> Are you joking? He's not real! <br> I'm here since thousands of years and have to listen to some Netflix Millenial? In what kind of magical dream world are you living? Please waste someone elses time or try again... if you dare.";
+    document.getElementById("riddlebox2").innerHTML = "Gandalf? Are you joking? He's not real! <br> I'm here since thousands of years and have to listen to some Netflix Millenial? In what kind of magical dream world are you living? Please waste someone elses time or try again... if you dare.";
   }); 
 
