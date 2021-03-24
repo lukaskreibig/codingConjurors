@@ -19,7 +19,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  grid-template-columns: 0.7fr 1fr 3fr 0.7fr;
+  grid-template-columns: 0.7fr 1fr 2fr 0.7fr;
   grid-template-rows: 2fr 3fr 2.5fr 1fr;
   background-image: url("codingconjuror.png");
   background-size: cover;
@@ -28,17 +28,24 @@
 
 .intro-element {
   text-align: left;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #riddlebox {
-  opacity: 0.5;
-  background-color: black;
+  border-radius: 25 50px;
+  padding: 10px;
+  padding-left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-shadow: 2px 2px black;
+  font-style: italic;
 }
 
 #riddlebox p {
-  color: white;
   font-weight: bold;
+  color: lightcoral;
+  font-style: normal;
+  text-shadow: 2px 2px black;
 }
 
 .wrapper {
@@ -47,4 +54,23 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.animated-text {
+  font-family: monospace;
+  overflow: hidden;
+  height: 1.1em;
+  word-wrap: break-word;
+  white-space: nowrap;
+  animation: typing 4s steps(362) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 362ch;
+  }
 }
