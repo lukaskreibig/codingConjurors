@@ -54,7 +54,7 @@
 
 /*wizard*/
 
-.wizard3 {
+.wizard4 {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 3;
@@ -64,7 +64,7 @@
   object-fit: cover; 
 }
 
-.speech3 {
+.speech4 {
   color: #5603AD;
   font-size: 1vw;
 } 
@@ -126,14 +126,6 @@
 }
 /*End tarot cards*/
 /*Prophecy box*/
-
-/* @media screen and (orientation: landscape) {
-  .prophecy-box {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  } */
 
 .prophecy-box {
   grid-column-start: 3;
