@@ -23,7 +23,7 @@
 }
 
 .slide-one {
-  background: #efdefe;
+  background: #efdefe; 
 }
 
 .slide-two{
@@ -429,12 +429,126 @@ margin-bottom: 3%;}
 
   /* End of Slide two CSS */
 
+
 .slide-three {
-  background: #0bbaa0;
+ 
+  background: #00dfdf
 }
+
 .slide-four {
-  background: #00dfdf;
+  background-image:url("assets/slide-3-background.png");
+  background-size: cover;
 }
+
+
+
+/*Slide 4*/
+
+.tarot-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(16, 200px); 
+  justify-items: center;
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+/*wizard*/
+
+.wizard4 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.speech4 {
+  color: #5603AD;
+  font-size: 1vw;
+} 
+
+/*Tarot cards*/
+
+.tarot-cards-grid {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  cursor: grab;
+}
+
+.scene {
+  width: 220px;
+  height: 300px;
+  perspective: 600px;
+  border-style: solid 0.5px;
+  border-color: #5603AD;
+}
+
+.card {
+  height: 300px; 
+  width: 220px;
+  border-radius: 15px;
+  position: relative;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+}
+
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  background-color: #e4eee9;
+  background-image: linear-gradient(315deg, #e4eee9 0%, #93a5ce 74%);
+}
+
+/*.card__face--front {
+  border-radius: 15px;
+}*/
+
+.card__face--back {
+  
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(180deg);
+}
+
+.card {
+  transform-origin: center right; 
+}
+/*End tarot cards*/
+/*Prophecy box*/
+
+.prophecy-box {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 8px;
+  background-color: #93a5ce;
+  background-image: linear-gradient(315deg, #e4eee9 0%, #93a5ce 74%);
+  align-content: center;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 2.1vw;
+  color: #5603AD;
+}
+
+/*End prophecy box*/
+
+
 .slide-five {
 
   background-image: url("./assets/BackgroundBattle.jpg");
