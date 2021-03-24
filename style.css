@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+/* import font */
+
+* {
+  font-size: 100%;
+  font-family: "VT323", monospace;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+
+  /* main content */
+}
+.slide-one,
+.slide-two,
+.slide-three,
+.slide-four,
+.slide-five {
+  height: 100vh;
+  width: 100vw;
+}
+
+.slide-one {
+  background: #efdefe;
+}
+.slide-two {
+  background: #a3f3d3;
+}
+.slide-three {
+  background: #0bbaa0;
+}
+.slide-four {
+  background: #00dfdf;
+}
+.slide-five {
+  background-image: url("./assets/BackgroundBattle.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* */
+/* Start of Battle CSS */
+
+.battleGrid {
+  display: grid;
+  height: 95%;
+  margin-bottom: auto;
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 2%;
+}
+.quiz {
+  grid-column: 2 / 6;
+  grid-row: 1 / 2;
+  background-color: rgba(0, 255, 200, 0.596);
+}
+
+/* Quiz Css */
+.question {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-top: 5%;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flexbox;
+  font-size: 2rem;
+}
+.answers label {
+  display: block;
+  margin-bottom: 10px;
+}
+button {
+  position: center;
+  margin-top: 10%;
+  margin-left: 20%;
+  font-size: 22px;
+  background-color: rgba(183, 113, 248, 0.781);
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+button:hover {
+  background-color: rgb(41, 1, 78);
+}
+
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+/* End of Quiz Css */
+
+.wiz {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-color: rgba(183, 113, 248, 0.226);
+}
+
+#wizardIdleBattle {
+  height: 80%;
+  width: 80%;
+  padding: 0%;
+  padding-top: 0%;
+}
+
+.evilWiz {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  background-color: rgba(183, 113, 248, 0.226);
+}
+
+#evilWizardIdle {
+  margin-top: 0%;
+  padding: 0%;
+  margin-bottom: 10%;
+  height: 120%;
+  width: 120%;
+}
+/* End of Battle CSS */
+
+/* outer wrapper is transformed for sidescroll
+     inner wrapper is transformed back */
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 500vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.outer-wrapper {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* progress bar CSS starts here */
+
+/* container for flexbox */
+
+#progress-container {
+  height: 98vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* forces the bar to the bottom */
+
+#placeholder {
+  height: 80vh;
+  width: 100vw;
+}
+
+/* container to make progress bar sticky */
+
+#progress {
+  width: 80vw;
+  height: 15vh;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+}
+
+#progress-flex {
+  display: flex;
+  justify-content: row;
+  flex-wrap: nowrap;
+}
+
+/* regulates the monster in the progress bar*/
+#monstercontainer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
+
+#monsteranimation {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 1%;
+}
+
+/* regulates the progress bar */
+
+#progress-bar {
+  transition: width 0.1s;
+  border-radius: 16px;
+  width: 0%;
+  height: 8px;
+  background-color: #e4afff8a;
+  position: absolute;
+  top: 85px;
+  left: 0;
+}
+
+/* regulates the dots on the progress bar */
+
+.progress-dot {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #e4afff;
+  position: absolute;
+  top: 80px;
+  left: 3%;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+}
+
+#dot2 {
+  left: 24%;
+  display: none;
+}
+
+#dot3 {
+  left: 50%;
+  display: none;
+}
+
+#dot4 {
+  left: 75%;
+  display: none;
+}
+
+#dot5 {
+  left: 99%;
+  display: none;
+}
+
+.progress-text {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  font-size: 22px;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  margin-bottom: 15px;
+}
+
+#progress-text2 {
+  left: 21%;
+  display: none;
+}
+
+#progress-text3 {
+  left: 48%;
+  display: none;
+}
+
+#progress-text4 {
+  left: 74%;
+  display: none;
+}
+
+#progress-text5 {
+  left: 96.5%;
+  white-space: nowrap;
+  display: none;
+}
+
+/* regulates the fadeIn for the progressbar DOTS */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* progress bar css ends here */
