@@ -18,13 +18,16 @@ const typeWriter = () => {
 typeWriter()
 
 document.getElementById("b1").addEventListener("click", function() {
-    document.getElementById("riddlebox2").innerHTML = "WRONG WRONG WRONG! Merlin was a legend. But a legend is just that... a legend. And he did NOT reinvent the Internet Magic. Merlin was like... a long time ago or something like that! Try again or go away!";
+
+    document.getElementById("riddlebox2").innerHTML = "";
+    document.getElementById("riddlebox2").innerHTML = "WRONG WRONG WRONG!" + "<p>" + "Merlin was a legend. But a legend is just ... a legend. And he did NOT reinvent the Internet Magic. Merlin is as old as I am, so how could he invent Internet Magic? Think before you talk - now try again!" +"</p>";
+
   }); 
 
   document.getElementById("b2").addEventListener("click", function() {
     
-        
-        document.getElementById("riddlebox2").innerHTML = "You SOLVED the riddle! ENTER THE MAGIC CODING KINGDOM by saying the magic passphrase...";
+        document.getElementById("riddlebox2").innerHTML = "";
+        document.getElementById("riddlebox2").innerHTML = "You SOLVED the riddle! ENTER THE MAGIC CODING KINGDOM by clicking the magic passphrase..." + "<p>";
 
         if(buttonswitch !== 1){
             let button = document.createElement("button");
@@ -37,6 +40,7 @@ document.getElementById("b1").addEventListener("click", function() {
   }); 
 
   document.getElementById("b3").addEventListener("click", function() {
+    document.getElementById("riddlebox2").innerHTML = "";
     document.getElementById("riddlebox2").innerHTML = "Gandalf? Are you serious? He's not real! I'm here for thousands of years and have to listen to some Netflix Millenial? Please waste someone elses time or try again... if you dare.";
   }); 
 
