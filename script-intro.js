@@ -4,6 +4,7 @@ let speed = 15;
 let button1 = document.getElementById("b1")
 let button2 = document.getElementById("b2")
 let button3 = document.getElementById("b3")
+let wizard = document.getElementById("speech-grid")
 let statue1 = '....the statue starts to speak as you approach the old ruins....';
 let statue2 = "BEHOLD! YOU DARE to enter the forgotten magical world of coding? Are YOU worthy to do so? Answer my question, and we\'ll see if you are as clever as you think. Who was the great inventor of the magical coding spell language, also known as JAVASCRIPT, which brought magic upon the Internet? Choose wisely..."
 
@@ -31,6 +32,7 @@ document.getElementById("b1").addEventListener("click", function() {
 
     document.getElementById("riddlebox2").innerHTML = "";
     document.getElementById("riddlebox2").innerHTML = "WRONG WRONG WRONG! <br> Merlin was a legend. But a legend is just ... a legend. And he did NOT reinvent the Internet Magic. Merlin is as old as I am, so how could he invent Internet Magic? Think before you talk - now try again!";
+    wizard.innerHTML = "Wow, she seems pretty grumpy! <br> I would too if I'm a statue."
 
   }); 
 
@@ -38,6 +40,8 @@ document.getElementById("b1").addEventListener("click", function() {
     
         document.getElementById("riddlebox2").innerHTML = "";
         document.getElementById("riddlebox2").innerHTML = "You SOLVED the riddle! ENTER THE MAGIC CODING KINGDOM by clicking the magic passphrase..." + "<p>";
+        wizard.innerHTML = "Cool, you made it! <br> Let's go."
+        
 
         if(buttonswitch !== 1){
             let button = document.createElement("button");
@@ -61,5 +65,6 @@ dot3.style.display = "none";
   document.getElementById("b3").addEventListener("click", function() {
     document.getElementById("riddlebox2").innerHTML = "";
     document.getElementById("riddlebox2").innerHTML = "Gandalf? Are you joking? He's not real! <br> I'm here since thousands of years and have to listen to some Netflix Millenial? In what kind of magical dream world are you living? Please waste someone elses time or try again... if you dare.";
+    wizard.innerHTML = "Netflix Millenial? Ok Boomer.<br>We'll riddle it out."
   }); 
 
