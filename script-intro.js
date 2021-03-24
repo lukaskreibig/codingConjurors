@@ -7,11 +7,21 @@ let button3 = document.getElementById("b3")
 let statue1 = '....the statue starts to speak as you approach the old ruins....';
 let statue2 = "BEHOLD! YOU DARE to enter the forgotten magical world of coding? Are YOU worthy to do so? Answer my question, and we\'ll see if you are as clever as you think. Who was the great inventor of the magical coding spell language, also known as JAVASCRIPT, which brought magic upon the Internet? Choose wisely..."
 
+// const statueSpeak = () => {
+//     if (i < statue1.length) {
+//       document.getElementById("riddlebox").innerHTML += statue1.charAt(i)
+//       i++;
+//       setTimeout(typeWriter, speed)
+      
+//     }
+//   }
+
 const typeWriter = () => {
   if (i < statue2.length) {
     document.getElementById("riddlebox2").innerHTML += statue2.charAt(i)
     i++;
     setTimeout(typeWriter, speed)
+
   }
 }
 
@@ -50,6 +60,6 @@ dot3.style.display = "none";
 
   document.getElementById("b3").addEventListener("click", function() {
     document.getElementById("riddlebox2").innerHTML = "";
-    document.getElementById("riddlebox2").innerHTML = "Gandalf? Are you serious? He's not real! I'm here for thousands of years and have to listen to some Netflix Millenial? Please waste someone elses time or try again... if you dare.";
+    document.getElementById("riddlebox2").innerHTML = "Gandalf? <br> Are you joking? He's not real! <br> I'm here since thousands of years and have to listen to some Netflix Millenial? In what kind of magical dream world are you living? Please waste someone elses time or try again... if you dare.";
   }); 
 
