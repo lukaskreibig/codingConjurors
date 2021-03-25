@@ -126,7 +126,7 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
-//Quiz Variables 
+//Quiz Variables documnet.class , correct
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
