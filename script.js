@@ -62,6 +62,7 @@ card.forEach((card) => {
 //Slide Five - Battle Javascript
 
 //Quiz Functions
+   //this function starts the game when we press start
 function startGame() {
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -81,7 +82,7 @@ question.answer.forEach(answer => {
   const button = document.createElement('button')
   button.innerText = answer.text
   button.classList.add('btn')
-  if(answer.correct){
+  if (answer.correct) {
     button.dataset.correct = answer.correct
   }
   button.addEventListener('click', selectAnswer)
@@ -96,13 +97,23 @@ function resetState() {
   }
 }
 
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+} 
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  }
+}
+
 function selectAnswer(e) {
 const selectedButton = e.target
 const correct = selectedButton.dataset.correct
-/*setStatusClass (document.body, correct)
-Array.from(answerButtonsElement.children).forEach(button => {
-  setStatusClass(button, button.dataset.correct)
-}) */
 if(shuffledQuestions.length > currentQuestionsIndex + 1) {
   nextButton.classList.remove('hide')}
   else { 
@@ -112,19 +123,7 @@ if(shuffledQuestions.length > currentQuestionsIndex + 1) {
 
 
 
-function setStatusClass(element, correct) {
-  clearStatusClass(element)
-  if (correct) {
-    element.classList.add('correct')
-  } else {
-    element.classlist.add('wrong')
-  }
-}
 
-function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
-}
 
 //Quiz Variables documnet.class , correct
 const startButton = document.getElementById('start-btn')
@@ -136,7 +135,7 @@ const questions = [
     answer: [ 
       {text: 'Linus Torvalds', correct: false},
       {text: 'Danny deVitto', correct: false},
-      {text: 'Brendan Eich', correct: true }
+      {text: 'Brendan Eich', correct: true}
     ]
   },
   {
@@ -144,7 +143,7 @@ const questions = [
     answer: [ 
       {text: 'array.map', correct: false},
       {text: 'array.filter', correct: false},
-      {text: 'array.key', correct: true }
+      {text: 'array.key', correct: true}
     ]
   },
   {
@@ -152,7 +151,7 @@ const questions = [
     answer: [ 
       {text: 'callback function', correct: true},
       {text: 'hollaback function', correct: false},
-      {text: 'high order function', correct: false }
+      {text: 'high order function', correct: false}
     ]
   }
 ]

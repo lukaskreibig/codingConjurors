@@ -686,7 +686,7 @@ figcaption {
 .quiz {
   grid-column: 2 / 6;
   grid-row: 1 / 2;
-  background-color: rgba(0, 255, 200, 0.596); 
+ 
 }
 
 /* Quiz Css */
@@ -695,7 +695,6 @@ figcaption {
 
 .quiz{
   box-sizing:border-box;
-  background-color: #e4afff50;
   padding: 0;
   margin: 0;
   display: flex;
@@ -704,24 +703,22 @@ figcaption {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: black;
-  text-shadow: 5px 7px 7px rgba(255, 255, 255, 0.75),
-  -3px 10px 12px rgba(255, 255, 255, 0.767);
+  color: white;
+ 
 }
 
-#correct {
+.quiz.correct {
   background-color: rgb(57, 219, 17);
 }
 
-#wrong {
+.quiz.wrong {
   background-color: rgb(187, 0, 0);
 }
 
-.quiz-container {
+.quizContainer {
   width: 800px;
   max-width: 80%;
   background-color: #47026ca8;
-  border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 20px 2px;
 }
@@ -733,8 +730,8 @@ figcaption {
 }
 .btn {
   
-  border: 1px solid #9001dde1;
-  background-color:  #9001dde1;
+  border: 1px solid black;
+  background-color:  #cb86f0e1;
   border-radius: 5px;
 }
 
@@ -749,8 +746,8 @@ border-color: rgb(255, 255, 255);
 }
 
 .btn.wrong {
-  background-color: rgb(187, 0, 0);
-  
+  background-color: red;
+  color: black;
 }
 
 .start-btn, .next-btn {
@@ -772,7 +769,7 @@ border-color: rgb(255, 255, 255);
 .wiz {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background-color: rgba(183, 113, 248, 0.226);
+ 
 }
 
 #wizardIdleBattle {
@@ -785,7 +782,7 @@ border-color: rgb(255, 255, 255);
 .evilWiz {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
-  background-color: rgba(183, 113, 248, 0.226);
+
 }
 
 #evilWizardIdle {
