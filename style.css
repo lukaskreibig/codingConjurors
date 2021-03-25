@@ -31,7 +31,7 @@ body {
 }
 
 .slide-one {
-  background: lightblue;
+  background: rgb(131, 145, 204);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 0.2fr 0.9fr 1.1fr 0.7fr 0.8fr;
@@ -93,7 +93,7 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: lightslategrey;
+  background-color: rgb(90, 168, 187);
 }
 
 /* Container */
