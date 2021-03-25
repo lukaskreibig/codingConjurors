@@ -62,168 +62,112 @@ card.forEach((card) => {
 
 //Slide Five - Battle Javascript
 
-//Quiz FUNCTIONS
-(function(){
-  // Functions
-  function buildQuiz(){
-    // variable to store the HTML output
-    const output = [];
+//Quiz Functions
+   //this function starts the game when we press start
+function startGame() {
+  startButton.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionsIndex = 0
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
+}
 
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionsIndex])
+}
 
-        // variable to store the list of possible answers
-        const answers = [];
-
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
-
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-        }
-
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
-        );
-      }
-    );
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
+function showQuestion(question) {
+questionElement.innerText = question.question
+question.answer.forEach(answer => {
+  const button = document.createElement('button')
+  button.innerText = answer.text
+  button.classList.add('btn')
+  if (answer.correct) {
+    button.dataset.correct = answer.correct
   }
+  button.addEventListener('click', selectAnswer)
+  answerButtonsElement.appendChild(button)
+})
+}
 
-  function showResults(){
-
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    // keep track of user's answers
-    let numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+function resetState() {
+  nextButton.classList.add('hide')
+  while(answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+}
 
-  function showSlide(n) {
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-    currentSlide = n;
-    if(currentSlide === 0){
-      previousButton.style.display = 'none';
-    }
-    else{
-      previousButton.style.display = 'inline-block';
-    }
-    if(currentSlide === slides.length-1){
-      nextButton.style.display = 'none';
-      submitButton.style.display = 'inline-block';
-    }
-    else{
-      nextButton.style.display = 'inline-block';
-      submitButton.style.display = 'none';
-    }
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+} 
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
   }
+}
 
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
+function selectAnswer(e) {
+const selectedButton = e.target
+const correct = selectedButton.dataset.correct
+if(shuffledQuestions.length > currentQuestionsIndex + 1) {
+  nextButton.classList.remove('hide')}
+  else { 
+  startButton.innerText = 'The battle is OVER. Click to TRY AGAIN'
+  startButton.classList.remove('hide')}
+}
+
+
+
+
+
+//Quiz Variables documnet.class , correct
+const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
+const questionContainerElement = document.getElementById('question-container')
+const questions = [
+  {
+    question: 'Who invented Javascript?',
+    answer: [ 
+      {text: 'Linus Torvalds', correct: false},
+      {text: 'Danny deVitto', correct: false},
+      {text: 'Brendan Eich', correct: true}
+    ]
+  },
+  {
+    question: 'Which one is not an array method?',
+    answer: [ 
+      {text: 'array.map', correct: false},
+      {text: 'array.filter', correct: false},
+      {text: 'array.key', correct: true}
+    ]
+  },
+  {
+    question: 'What kind of function is used as an argument for another function?',
+    answer: [ 
+      {text: 'callback function', correct: true},
+      {text: 'hollaback function', correct: false},
+      {text: 'high order function', correct: false}
+    ]
   }
+]
 
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
+let shuffledQuestions 
+let currentQuestionsIndex
 
-  // Variables
-  const wizardAttack = document.getElementById('wizardIdleBattle');
-  const evilWizardAttack = document.getElementById('evilWizardIdle');
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
-
-  const myQuestions = [
-    {
-      question: "Who invented JavaScript?",
-      answers: {
-        a: "Linus Torvalds",
-        b: "Danny deVitto",
-        c: "Brendan Eich"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Which one of these is not an array method?",
-      answers: {
-        a: "array.map()",
-        b: "array.findIndexOf()",
-        c: "array.key"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "What is the name of a function that acts as an argument for another function?",
-      answers: {
-        a: "callback function",
-        b: "hollaback function",
-        c: "parameter",
-        d: "high order function"
-      },
-      correctAnswer: "a"
-    }
-  ];
-
-  // Kick things off
-  buildQuiz();
-
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-
-  // Show the first slide
-  showSlide(currentSlide);
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-  submitButton.addEventListener('click', a = () => {
-     wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./assets/EvilTakeHit.gif";
- } );
-})();
+//Quiz Event listeners
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionsIndex++
+  setNextQuestion()
+})
 
 //End of Slide Five Javascript
 

@@ -628,8 +628,8 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
 
+}
 /* */
 /* Start of Battle CSS */
 
@@ -647,68 +647,90 @@ figcaption {
 .quiz {
   grid-column: 2 / 6;
   grid-row: 1 / 2;
-  background-color: rgba(0, 255, 200, 0.596);
+ 
 }
 
 /* Quiz Css */
-.question {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-.answers {
-  margin-top: 5%;
-  margin-bottom: 20px;
-  text-align: center;
-  display: flexbox;
-  font-size: 2rem;
-}
-.answers label {
-  display: block;
-  margin-bottom: 10px;
-}
-button {
-  position: center;
-  margin-top: 10%;
-  margin-left: 20%;
-  font-size: 22px;
-  background-color: rgba(183, 113, 248, 0.781);
-  color: #fff;
-  border: 0px;
-  border-radius: 3px;
-  padding: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-button:hover {
-  background-color: rgb(41, 1, 78);
-}
 
-.slide {
-  position: absolute;
-  left: 0px;
-  top: 0px;
+
+
+.quiz{
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+  display: flex;
   width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.active-slide {
-  opacity: 1;
-  z-index: 2;
-}
-.quiz-container {
-  position: relative;
-  height: 200px;
-  margin-top: 40px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+ 
 }
 
+.quiz.correct {
+  background-color: rgb(57, 219, 17);
+}
+
+.quiz.wrong {
+  background-color: rgb(187, 0, 0);
+}
+
+.quizContainer {
+  width: 800px;
+  max-width: 80%;
+  background-color: #47026ca8;
+  padding: 10px;
+  box-shadow: 0 0 20px 2px;
+}
+.btn-grid{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  margin: 20px 0;
+}
+.btn {
+  
+  border: 1px solid black;
+  background-color:  #cb86f0e1;
+  border-radius: 5px;
+}
+
+.btn:hover {
+border-color: rgb(255, 255, 255);
+
+}
+
+.btn.correct {
+ background-color: rgb(57, 219, 17);
+ color: black;
+}
+
+.btn.wrong {
+  background-color: red;
+  color: black;
+}
+
+.start-btn, .next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+.quiz-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
 /* End of Quiz Css */
 
 .wiz {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background-color: rgba(183, 113, 248, 0.226);
+ 
 }
 
 #wizardIdleBattle {
@@ -721,16 +743,17 @@ button:hover {
 .evilWiz {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
-  background-color: rgba(183, 113, 248, 0.226);
+
 }
 
 #evilWizardIdle {
   margin-top: 0%;
   padding: 0%;
-  margin-bottom: 10%;
-  height: 120%;
-  width: 120%;
+  margin-bottom: 0;
+  height: 70%;
+  width: 70%;
 }
+
 /* End of Battle CSS */
 
 /* outer wrapper is transformed for sidescroll
