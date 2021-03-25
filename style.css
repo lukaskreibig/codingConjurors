@@ -244,7 +244,7 @@ figcaption {
     border-radius: 16px;
     width: 0%;
     height: 8px;
-    background-color: #e4afff8a;
+    background-color: goldenrod;
     position: absolute;
     top: 85px;
     left: 0;
@@ -256,7 +256,7 @@ figcaption {
     border-radius: 50%;
     height: 20px;
     width: 20px;
-    background-color: #e4afff;
+    background-color: goldenrod;
     position: absolute;
     top: 80px;
     left: 3%;
@@ -290,7 +290,7 @@ figcaption {
   }
 
   .progress-text {
-    color: white;
+    color: goldenrod;
     position: absolute;
     bottom: 0;
     font-size: 1.5rem;
@@ -465,45 +465,48 @@ figcaption {
 }
 
 .slide-four {
-  background-image: url("assets/slide-3-background.png");
+  background-image: url("assets/ground.png");
   background-size: cover;
+  background-position: bottom;
+  background-color: goldenrod;
 }
 
 /*Slide 4*/
 
 .tarot-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-template-rows: repeat(16, 200px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  grid-gap: 1rem;
   grid-auto-flow: dense;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 16px;
+  margin: 50px;
 }
 
 /*wizard*/
 
 .wizard4 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  top: 40px;
+  left: 50px;
 }
 
 .speech4 {
   color: #5603ad;
-  font-size: 1vw;
+
+  font-size: 30px;
 }
 
 /*Tarot cards*/
 
 .tarot-cards-grid {
-  grid-column-start: 4;
+  grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -559,17 +562,13 @@ figcaption {
 
 .prophecy-box {
   grid-column-start: 2;
-  grid-column-end: 6;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 8px;
-  background-color: #93a5ce;
-  background-image: linear-gradient(315deg, #e4eee9 0%, #93a5ce 74%);
+  margin-top: 10px;
   align-content: center;
   text-align: center;
-  line-height: 1.6;
-  font-size: 2.1vw;
-  color: #5603ad;
+  font-size: 30px;
 }
 
 /*End prophecy box*/
@@ -762,7 +761,7 @@ button:hover {
   border-radius: 16px;
   width: 0%;
   height: 8px;
-  background-color: #e4afff8a;
+  background-color: goldenrod;
   position: absolute;
   top: 85px;
   left: 0;
@@ -774,7 +773,7 @@ button:hover {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  background-color: #e4afff;
+  background-color: goldenrod;
   position: absolute;
   top: 80px;
   left: 3%;
