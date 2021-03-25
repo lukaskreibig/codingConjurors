@@ -45,7 +45,7 @@ document.getElementById("b1").addEventListener("click", function() {
 
         if(buttonswitch !== 1){
             let button = document.createElement("button");
-            button.innerHTML = "<a href=index.html>CODING IS MAGIC</a></span>"
+            button.innerHTML = "<a href=intro.html>CODING IS MAGIC</a></span>"
             button.classList.add("entry");
             document.getElementById("riddlebox").appendChild(button);
             buttonswitch = 1 
