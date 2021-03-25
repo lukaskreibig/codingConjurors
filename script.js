@@ -1,3 +1,34 @@
+// Sorting Socks Javascript Funtimes
+
+// An array of objects with Job names and descriptions
+const careers = [
+    {title: "Front-End Developer", text: "Front-End Description"}, 
+    {title: "Back-End Developer", text: "Back-End Description"}, 
+    {title: "Software Engineer", text: "Software Engineer Description"}, {title: "CEO at Facebook", text: "CEO Description"},
+    {title: "Product Manager at Google", text: "PM Description"},
+    {title: "Data Analyst", text: "Data Analyst Description"},
+    {title: "Supreme AI Overlord", text: "AI Overlord Description"}]
+
+   
+let button = document.querySelector("button");
+let answer = document.querySelector("h1");
+let speech = document.getElementsByClassName("sortingSocks");
+let speechBubble = document.getElementById("speech");
+
+//When the first click on the page is made(i.e. the button is clicked), the wizard's speech will change
+speech[0].addEventListener('click', () => {
+    speechBubble.innerHTML = "...unless you click again!";
+})
+
+//Random answer given when button is clicked
+button.onclick = function(){
+ 
+    let i = Math.floor(0 + Math.random()*(careers.length + 1 - 0))
+	answer.innerHTML = `Your destiny is to become a ${careers[i].title}! ${careers[i].text}`;
+    
+}
+// End of Slide Two - Sorting Socks - Javascript
+
 // //Tarot cards page - Flip function
 const card = document.querySelectorAll('.card');
 
@@ -5,7 +36,7 @@ const card = document.querySelectorAll('.card');
  const prophecy = [
   {future: 'bright', text:'Thanks to incredible technological advances in agriculture, medicine and power-sources, the world is green, clean and serene. We all live together in peaceful harmony, and thanks to the four-day working week and universal income, we work on projects that we enjoy, and have plenty of time to spend with family, friends and other frivolous pursuits.'},
   {future: 'bleak', text:'We thought AI and robots would improve our lives, but instead they have robbed us of our livelihoods. The few of us who are lucky enough to have jobs work on maintaining the robots in factory lines. The rest of us hustle and barter to survive.'},
- {future: 'adventurous', text:'The future is already here. We may only be roving on Mars today, but tomorrow our passports will include a planet of birth and will be setting up trade agreements with alien species. Let us hope that these foreign traders are not tempted to enslave us all!'}];
+ {future: 'adventurous', text:'The future is already here. We may only be roving on Mars today, but tomorrow our passports will include a planet of birth and we will be setting up trade agreements with alien species. Let us hope that these foreign traders are not tempted to enslave us all!'}];
 
 const cardProphecy = document.querySelector('.cards-prophecy');
 
@@ -18,15 +49,187 @@ card.forEach((card) => {
            card.classList.toggle("is-flipped");
            countTarot = countTarot + 1;
       if (countTarot === 3) {
-         let j = Math.floor((0 + Math.random() * (prophecy.length-1)));
+         let j = Math.floor((0 + Math.random() * (prophecy.length)));
      cardProphecy.innerHTML = `The cards have revealed a future and it is ${prophecy[j].future}! ${prophecy[j].text}`
   
        }
            }); 
           
    });
+//End of TArots page
 
-//Progress bar Javascript
+
+//Slide Five - Battle Javascript
+
+//Quiz FUNCTIONS
+(function(){
+  // Functions
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
+
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const wizardAttack = document.getElementById('wizardIdleBattle');
+  const evilWizardAttack = document.getElementById('evilWizardIdle');
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+
+  const myQuestions = [
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "Linus Torvalds",
+        b: "Danny deVitto",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is not an array method?",
+      answers: {
+        a: "array.map()",
+        b: "array.findIndexOf()",
+        c: "array.key"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What is the name of a function that acts as an argument for another function?",
+      answers: {
+        a: "callback function",
+        b: "hollaback function",
+        c: "parameter",
+        d: "high order function"
+      },
+      correctAnswer: "a"
+    }
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+  submitButton.addEventListener('click', a = () => {
+     wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./assets/EvilTakeHit.gif";
+ } );
+})();
+
+//End of Slide Five Javascript
+
+
+
+
+//PROGRESS BAR
 // get the wrapper for onscroll and calculation of the progres bar width
 let innerWrapper = document.querySelector('.inner-wrapper');
 let outerWrapper = document.querySelector('.outer-wrapper')
@@ -202,5 +405,9 @@ outerWrapper.onscroll = () => { progressBar(); progressStep()};
         }
 
 
+
       
+
+// End of Progress Bar Javascript      
+
 
