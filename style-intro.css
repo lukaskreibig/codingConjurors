@@ -36,7 +36,7 @@ a:hover {
   height: 100%;
   grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
   grid-template-rows: 1fr 0.55fr 0.5fr 0.4fr;
-  background-image: url("codingconjuror.png");
+  background-image: url("./assets/codingconjuror.png");
   background-size: cover;
   background-position: top;
 }
@@ -58,7 +58,7 @@ a:hover {
   display: flex;
 }
 
-img[src*="wizard-idle-small.gif"] {
+img[src*="./assets/wizard-idle-small.gif"] {
   width: 150px;
   display: flex;
 }
