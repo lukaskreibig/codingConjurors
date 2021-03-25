@@ -111,7 +111,8 @@ figcaption {
   grid-column: 3 / 5;
   grid-row: 3 / 4;
   position: relative;
-  left: 60px;
+  left: 20px;
+  bottom: 50px;
 }
 
 /* Wizard - column 1, row 2 */
@@ -121,7 +122,7 @@ figcaption {
   grid-row-start: 3;
   grid-row-end: 4;
   position: relative;
-  bottom: 40px;
+  bottom: 200px;
 }
 
 /* Wizard's speech bubble */
@@ -152,6 +153,7 @@ figcaption {
   height: 5vh;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 0;
+  border: 0;
 }
 
 /* Sorting Socks Iphone media query starts here */
@@ -628,7 +630,6 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 /* */
 /* Start of Battle CSS */
@@ -647,15 +648,12 @@ figcaption {
 .quiz {
   grid-column: 2 / 6;
   grid-row: 1 / 2;
- 
 }
 
 /* Quiz Css */
 
-
-
-.quiz{
-  box-sizing:border-box;
+.quiz {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   display: flex;
@@ -665,7 +663,6 @@ figcaption {
   align-items: center;
   font-size: 2rem;
   color: white;
- 
 }
 
 .quiz.correct {
@@ -683,27 +680,25 @@ figcaption {
   padding: 10px;
   box-shadow: 0 0 20px 2px;
 }
-.btn-grid{
+.btn-grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 15px;
   margin: 20px 0;
 }
 .btn {
-  
   border: 1px solid black;
-  background-color:  #cb86f0e1;
+  background-color: #cb86f0e1;
   border-radius: 5px;
 }
 
 .btn:hover {
-border-color: rgb(255, 255, 255);
-
+  border-color: rgb(255, 255, 255);
 }
 
 .btn.correct {
- background-color: rgb(57, 219, 17);
- color: black;
+  background-color: rgb(57, 219, 17);
+  color: black;
 }
 
 .btn.wrong {
@@ -711,7 +706,8 @@ border-color: rgb(255, 255, 255);
   color: black;
 }
 
-.start-btn, .next-btn {
+.start-btn,
+.next-btn {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 20px;
@@ -730,7 +726,6 @@ border-color: rgb(255, 255, 255);
 .wiz {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
- 
 }
 
 #wizardIdleBattle {
@@ -743,7 +738,6 @@ border-color: rgb(255, 255, 255);
 .evilWiz {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
-
 }
 
 #evilWizardIdle {
