@@ -11,7 +11,7 @@ const careers = [
 
    
 let button = document.querySelector("button");
-let answer = document.querySelector("h1");
+let answer = document.querySelector("element3");
 let speech = document.getElementsByClassName("sortingSocks");
 let speechBubble = document.getElementById("speech");
 
