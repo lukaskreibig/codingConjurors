@@ -12,15 +12,14 @@
 ::-webkit-scrollbar {
   display: none;
 }
-  /* main content */
+/* main content */
 
-  
-  body {
-    color: #fff;
-    font-family: arial, sans-sarif;
-    background-color: #333;
-    text-align: center;
-  }
+body {
+  color: #fff;
+  font-family: arial, sans-sarif;
+  background-color: #333;
+  text-align: center;
+}
 
 .slide-one,
 .slide-two,
@@ -32,12 +31,12 @@
 }
 
 .slide-one {
-  background: lightblue;
+  background: rgb(131, 145, 204);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 0.2fr 0.9fr 1.1fr 0.7fr 0.8fr;
 
-  background-image: url("grass.png");
+  background-image: url("./assets/grass.png");
   background-size: cover;
   background-position: top;
 }
@@ -87,78 +86,72 @@ figcaption {
   align-content: flex-end;
 }
 
+/* Slide two Css */
+
 .slide-two {
-  background-image: url("./assets/BackgroundSorting.png");
+  background-image: url("./assets/floor.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgb(90, 168, 187);
 }
-
-/* Slide two Css */
 
 /* Container */
 
 .sortingSocks {
-  margin: 6%;
+  margin: 5%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 300px 200px;
-  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   font-family: "VT323", monospace;
 }
 
 /* Socks image - column 1, row 1 */
 .element1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-column: 3 / 5;
+  grid-row: 3 / 4;
+  position: relative;
+  left: 60px;
 }
 
 /* Wizard - column 1, row 2 */
 .element2 {
   grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   position: relative;
-  text-align: center;
-  height: 150%;
+  bottom: 40px;
 }
 
 /* Wizard's speech bubble */
 .centered {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
+  position: relative;
+  color: goldenrod;
+  text-shadow: 2px 2px black;
+  font-size: 30px;
 }
-
-/*  HEX colours from palette 
-   #C2F8CB; - bold light green #1
-   #B3E9C7 - warmer, lighter green
-   #5603AD - dark cold purple
-   #8367C7 - lighter cold purple
-   #47026C - de facto bg colour, warm dark purple
-   #C86BFA - lighter bright purple;
-   #E4AFFF - lilac ; 
-   #F5CF05 - gold ;
-   #FBE300 - yellow (lighter);
-   */
 
 /* Sorting Socks Answer Box */
 .element3 {
-  background-color: #e4afff63;
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 6;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 2;
   text-align: center;
-  line-height: 1.6;
-  padding: 10%;
-  font-size: 1.5rem;
-  color: black;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+}
+
+#sb1 {
+  grid-column: 3 / 5;
+  grid-row: 2 / 3;
+  position: relative;
+  bottom: 30px;
+  height: 5vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0;
 }
 
 /* Sorting Socks Iphone media query starts here */
@@ -203,191 +196,192 @@ figcaption {
     font-size: 0.6rem;
     margin-bottom: 3%;
   }
-  /* progress bar CSS starts here */
-
-  /* container for flexbox */
-
-  #progress-container {
-    height: 98vh;
-    width: 100vw;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-
-  /* forces the bar to the bottom */
-
-  #placeholder {
-    height: 80vh;
-    width: 100vw;
-  }
-
-  /* container to make progress bar sticky */
-
-  #progress {
-    width: 80vw;
-    height: 15vh;
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-  }
-
-  #progress-flex {
-    display: flex;
-    justify-content: row;
-    flex-wrap: nowrap;
-  }
-
-  /* regulates the monster in the progress bar*/
-  #monstercontainer {
-    height: 100px;
-    width: 100%;
-    position: relative;
-  }
-
-  #monsteranimation {
-    height: 75px;
-    width: 75px;
-    position: absolute;
-    left: 1%;
-  }
-
-  /* regulates the progress bar */
-
-  #progress-bar {
-    transition: width 0.1s;
-    border-radius: 16px;
-    width: 0%;
-    height: 8px;
-    background-color: #e4afff8a;
-    position: absolute;
-    top: 85px;
-    left: 0;
-  }
-
-  /* regulates the dots on the progress bar */
-
-  .progress-dot {
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background-color: #e4afff;
-    position: absolute;
-    top: 80px;
-    left: 3%;
-    /* fade in effect for different browser */
-    animation: fadeIn ease 1.5s;
-    -webkit-animation: fadeIn ease 1.5s;
-    -moz-animation: fadeIn ease 1.5s;
-    -o-animation: fadeIn ease 1.5s;
-    -ms-animation: fadeIn ease 1.5s;
-    -ms-animation: fadeIn ease 1.5s;
-  }
-
-  #dot2 {
-    left: 24%;
-    display: none;
-  }
-
-  #dot3 {
-    left: 50%;
-    display: none;
-  }
-
-  #dot4 {
-    left: 75%;
-    display: none;
-  }
-
-  #dot5 {
-    left: 99%;
-    display: none;
-  }
-
-  .progress-text {
-    color: white;
-    position: absolute;
-    bottom: 0;
-    font-size: 1.5rem;
-    /* fade in effect for different browser */
-    animation: fadeIn ease 1.5s;
-    -webkit-animation: fadeIn ease 1.5s;
-    -moz-animation: fadeIn ease 1.5s;
-    -o-animation: fadeIn ease 1.5s;
-    -ms-animation: fadeIn ease 1.5s;
-    -ms-animation: fadeIn ease 1.5s;
-    margin-bottom: 15px;
-  }
-
-  #progress-text2 {
-    left: 21%;
-    display: none;
-  }
-
-  #progress-text3 {
-    left: 48%;
-    display: none;
-  }
-
-  #progress-text4 {
-    left: 74%;
-    display: none;
-  }
-
-  #progress-text5 {
-    left: 96.5%;
-    white-space: nowrap;
-    display: none;
-  }
-
-  /* regulates the fadeIn for the progressbar DOTS */
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* progress bar css ends here */
 }
+/* progress bar CSS starts here */
+
+/* container for flexbox */
+
+#progress-container {
+  height: 98vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* forces the bar to the bottom */
+
+#placeholder {
+  height: 80vh;
+  width: 100vw;
+}
+
+/* container to make progress bar sticky */
+
+#progress {
+  width: 80vw;
+  height: 15vh;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+}
+
+#progress-flex {
+  display: flex;
+  justify-content: row;
+  flex-wrap: nowrap;
+}
+
+/* regulates the monster in the progress bar*/
+#monstercontainer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
+
+#monsteranimation {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 1%;
+}
+
+/* regulates the progress bar */
+
+#progress-bar {
+  transition: width 0.1s;
+  border-radius: 16px;
+  width: 0%;
+  height: 8px;
+  background-color: goldenrod;
+  position: absolute;
+  top: 85px;
+  left: 0;
+}
+
+/* regulates the dots on the progress bar */
+
+.progress-dot {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: goldenrod;
+  position: absolute;
+  top: 80px;
+  left: 3%;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+}
+
+#dot2 {
+  left: 24%;
+  display: none;
+}
+
+#dot3 {
+  left: 50%;
+  display: none;
+}
+
+#dot4 {
+  left: 75%;
+  display: none;
+}
+
+#dot5 {
+  left: 99%;
+  display: none;
+}
+
+.progress-text {
+  color: goldenrod;
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5rem;
+  /* fade in effect for different browser */
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  margin-bottom: 15px;
+}
+
+#progress-text2 {
+  left: 21%;
+  display: none;
+}
+
+#progress-text3 {
+  left: 48%;
+  display: none;
+}
+
+#progress-text4 {
+  left: 74%;
+  display: none;
+}
+
+#progress-text5 {
+  left: 96.5%;
+  white-space: nowrap;
+  display: none;
+}
+
+/* regulates the fadeIn for the progressbar DOTS */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* progress bar css ends here */
+
 /* End of IPHONE Sorting Socks media query */
 
 /* Sorting Socks Ipad PRO media query starts here */
@@ -406,15 +400,15 @@ figcaption {
     grid-row-start: 1;
     grid-row-end: 2;
   }
+
   .element2 {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
     position: relative;
     text-align: center;
-    color: white;
-    height: 70%;
+    bottom: 30px;
   }
   .centered {
     position: absolute;
@@ -474,50 +468,95 @@ figcaption {
 
 /* End of Slide two CSS */
 
+/*Slide two*/
+/* coding lesson page*/
 .slide-three {
-  background: #00dfdf;
-}
-
-.slide-four {
-  background-image: url("assets/slide-3-background.png");
+  background: url("slide3-background.png");
   background-size: cover;
 }
 
-/*Slide 4*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
+  grid-template-rows: 0.95fr 1fr;
+  margin-left: 2%;
+  margin-right: 6%;
+}
+
+.lesson-grid {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  text-align: justify;
+  font-size: 28px;
+  color: white;
+  position: relative;
+}
+
+.lesson-textbox {
+  margin-top: 10%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-top: 6%;
+  margin-right: 6%;
+  margin-bottom: 6%;
+  margin-left: 6%;
+}
+
+.wizard3 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  position: relative;
+  left: 10%;
+  top: 8%;
+}
+#speechgold {
+  color: goldenrod;
+  text-shadow: 2px 2px black;
+}
+
+/*Slide 4 tarot cards*/
+.slide-four {
+  background-image: url("assets/ground.png");
+  background-size: cover;
+  background-position: bottom;
+  background-color: lightseagreen;
+}
 
 .tarot-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-template-rows: repeat(16, 200px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  grid-gap: 1rem;
   grid-auto-flow: dense;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 16px;
+  margin: 50px;
 }
 
 /*wizard*/
 
 .wizard4 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  position: relative;
 }
 
 .speech4 {
-  color: #5603ad;
-  font-size: 1vw;
+  color: goldenrod;
+  font-size: 30px;
+  text-shadow: 2px 2px black;
 }
 
 /*Tarot cards*/
 
 .tarot-cards-grid {
-  grid-column-start: 4;
+  grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -573,94 +612,16 @@ figcaption {
 
 .prophecy-box {
   grid-column-start: 2;
-
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  background-color: #e4afff63;
-  text-align: justify;
-
-  grid-column-end: 6;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin-top: 8px;
-  background-color: #93a5ce;
-  background-image: linear-gradient(315deg, #e4eee9 0%, #93a5ce 74%);
+  margin-top: 10px;
   align-content: center;
   text-align: center;
-
-  line-height: 1.6;
-  font-size: 2.1vw;
-  color: #5603ad;
+  font-size: 30px;
 }
 
 /*End prophecy box*/
-
-
-.slide-four {
-  background-image: url("assets/slide-four-background.png");
-  background-size: cover;
-}
-
-/*Start coding lesson page*/
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  margin-left: 6%;
-  margin-top: 8%;
-  margin-right: 6%;
-  margin-bottom: 8%;
-  grid-gap: 5px;
-}
-
-.wizard4 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
-}
-
-.speech4 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  margin-top:50%;
-  text-align: center;
-  justify-items: center;
-  color: black;
-  font-size: 150%;
-}
-
-.lesson-grid {
-  grid-column-start: 3;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color: #e4afff63;
-  text-align: justify;
-  line-height: 1.6;
-  font-size: 1.5vw;
-  color: black;
-  position: relative;
-}
-
-.lesson-textbox{
-  margin-top: 10%;
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  margin-top: 6%;
-  margin-right: 6%;
-  margin-bottom: 6%;
-  margin-left: 6%;
-}
-
-
-
 
 .slide-five {
   background-image: url("./assets/BackgroundBattle.jpg");
@@ -850,7 +811,7 @@ button:hover {
   border-radius: 16px;
   width: 0%;
   height: 8px;
-  background-color: #e4afff8a;
+  background-color: goldenrod;
   position: absolute;
   top: 85px;
   left: 0;
@@ -862,7 +823,7 @@ button:hover {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  background-color: #e4afff;
+  background-color: goldenrod;
   position: absolute;
   top: 80px;
   left: 3%;
@@ -871,7 +832,6 @@ button:hover {
   -webkit-animation: fadeIn ease 1.5s;
   -moz-animation: fadeIn ease 1.5s;
   -o-animation: fadeIn ease 1.5s;
-  -ms-animation: fadeIn ease 1.5s;
   -ms-animation: fadeIn ease 1.5s;
 }
 
@@ -979,3 +939,24 @@ button:hover {
 }
 
 /* progress bar css ends here */
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

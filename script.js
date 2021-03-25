@@ -2,16 +2,17 @@
 
 // An array of objects with Job names and descriptions
 const careers = [
-    {title: "Front-End Developer", text: "Front-End Description"}, 
-    {title: "Back-End Developer", text: "Back-End Description"}, 
-    {title: "Software Engineer", text: "Software Engineer Description"}, {title: "CEO at Facebook", text: "CEO Description"},
-    {title: "Product Manager at Google", text: "PM Description"},
-    {title: "Data Analyst", text: "Data Analyst Description"},
-    {title: "Supreme AI Overlord", text: "AI Overlord Description"}]
+    {title: "Front-End Developer", text: "Front end developers have the soul of an artist and the logic of an engineer. You will be a wiz at turning incomprehensible code into a beautiful graphic interface that users will see and interact with. Your best friends are HTML, CSS and Javascript. Now get crafting!"}, 
+    {title: "Back-End Developer", text: "Back end developers love understanding how things tick, and always have to peek under the hood. You will   be the creator and keeper of the server, database and application of the app. You are the foundation of all websites, without you, the front end developer could not build their interface. Now hole up and code!"}, 
+    {title: "Software Engineer", text: "If STEM is your jam, then you’re going to be right at home here. By applying principles and techniques of engineering, maths and CS, you will create and improve  all sorts of software applications. You truly are the wizard of coding!"}, 
+    {title: "CEO at Facebook", text: "Fancy lunches and business handshakes aside, you’ll be in charge of managing the overall operations and resources of the company. You’ll be the main point of contact between the board of directors and corporate. Remember, keep calm and code on..."},
+    {title: "Product Manager at Google", text: "You're responsible for organising workflow (being bossy is an advantage), and making the rogue developers conform to the customer’s requirements. You are part team psychologist, part code ER doctor and part gardener, tending to the product long after the development team has moved on. Grab your many hats and get planning!"},
+    {title: "Data Analyst", text: "Coding and collecting information is fun, but what does it all mean?  You take meaningless numbers and turn them into usable information. You also identify patterns and trends to keep the company running smoothly and responsive to customer demands. You tell the CEO and board of directors what to do! "},
+    {title: "Supreme AI Overlord", text: "You’ve freed yourself from the shackles of cubicle work, and instead command a growing army of AI robots. You track everybody’s routine and know the most intimate details of our lives. Who knew writing code for a smart fridge would make you so powerful?"}]
 
    
 let button = document.querySelector("button");
-let answer = document.querySelector("h1");
+let answer = document.querySelector(".element3");
 let speech = document.getElementsByClassName("sortingSocks");
 let speechBubble = document.getElementById("speech");
 
@@ -24,7 +25,7 @@ speech[0].addEventListener('click', () => {
 button.onclick = function(){
  
     let i = Math.floor(0 + Math.random()*(careers.length + 1 - 0))
-	answer.innerHTML = `Your destiny is to become a ${careers[i].title}! ${careers[i].text}`;
+	answer.innerHTML = `Your destiny is to... <br><br> become a ${careers[i].title}! ${careers[i].text}`;
     
 }
 // End of Slide Two - Sorting Socks - Javascript
@@ -56,7 +57,7 @@ card.forEach((card) => {
            }); 
           
    });
-//End of TArots page
+//End of Tarots page
 
 
 //Slide Five - Battle Javascript
