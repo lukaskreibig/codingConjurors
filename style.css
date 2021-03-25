@@ -667,8 +667,8 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
 
+}
 /* */
 /* Start of Battle CSS */
 
@@ -686,20 +686,16 @@ figcaption {
 .quiz {
   grid-column: 2 / 6;
   grid-row: 1 / 2;
-  background-color: rgba(0, 255, 200, 0.596);
+  background-color: rgba(0, 255, 200, 0.596); 
 }
 
 /* Quiz Css */
 
-:root {
-  --hue-neutral: 280; 
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
+
 
 .quiz{
-  box-sizing: border-box;
-  -hue: var(--hue-neutral); 
+  box-sizing:border-box;
+  background-color: #e4afff50;
   padding: 0;
   margin: 0;
   display: flex;
@@ -707,15 +703,18 @@ figcaption {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: hsl(var(--hue), 100%, 20%);
+  font-size: 2rem;
+  color: black;
+  text-shadow: 5px 7px 7px rgba(255, 255, 255, 0.75),
+  -3px 10px 12px rgba(255, 255, 255, 0.767);
 }
 
 #correct {
-  --hue: var(--hue-correct);
+  background-color: rgb(57, 219, 17);
 }
 
 #wrong {
-  --hue: var(--hue-wrong);
+  background-color: rgb(187, 0, 0);
 }
 
 .quiz-container {
@@ -724,32 +723,33 @@ figcaption {
   background-color: #47026ca8;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 0 10px 2px;
+  box-shadow: 0 0 20px 2px;
 }
 .btn-grid{
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 10px;
+  gap: 15px;
   margin: 20px 0;
 }
 .btn {
-  --hue: var(--hue-neutral);
-  border: 1px solid hsl(var(--hue), 100%, 30%);
-  background-color:  hsl(var(--hue), 100%, 50%);
+  
+  border: 1px solid #9001dde1;
+  background-color:  #9001dde1;
   border-radius: 5px;
 }
 
 .btn:hover {
-border-color: black;
+border-color: rgb(255, 255, 255);
+
 }
 
 .btn.correct {
- --hue: var(--hue-correct);
+ background-color: rgb(57, 219, 17);
  color: black;
 }
 
 .btn.wrong {
-  --hue: var(--hue-wrong);
+  background-color: rgb(187, 0, 0);
   
 }
 
@@ -767,7 +767,6 @@ border-color: black;
 .hide {
   display: none;
 }
-
 /* End of Quiz Css */
 
 .wiz {
@@ -792,10 +791,11 @@ border-color: black;
 #evilWizardIdle {
   margin-top: 0%;
   padding: 0%;
-  margin-bottom: 10%;
-  height: 120%;
-  width: 120%;
+  margin-bottom: 0;
+  height: 70%;
+  width: 70%;
 }
+
 /* End of Battle CSS */
 
 /* outer wrapper is transformed for sidescroll
