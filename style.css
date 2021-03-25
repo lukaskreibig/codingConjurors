@@ -86,15 +86,15 @@ figcaption {
   align-content: flex-end;
 }
 
+/* Slide two Css */
+
 .slide-two {
   background-image: url("./assets/floor.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: lightblue;
+  background-color: lightslategrey;
 }
-
-/* Slide two Css */
 
 /* Container */
 
@@ -477,7 +477,7 @@ figcaption {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 0.95fr 1fr;
   margin-left: 2%;
   margin-right: 6%;
 }
@@ -524,7 +524,7 @@ figcaption {
   background-image: url("assets/ground.png");
   background-size: cover;
   background-position: bottom;
-  background-color: goldenrod;
+  background-color: lightseagreen;
 }
 
 .tarot-page-grid {
@@ -547,9 +547,9 @@ figcaption {
 }
 
 .speech4 {
-  color: #5603ad;
+  color: goldenrod;
   font-size: 30px;
-  text-shadow: 2px 2px #5603ad;
+  text-shadow: 2px 2px black;
 }
 
 /*Tarot cards*/
