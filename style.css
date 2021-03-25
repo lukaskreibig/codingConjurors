@@ -11,9 +11,16 @@
 }
 ::-webkit-scrollbar {
   display: none;
-
-  /* main content */
 }
+/* main content */
+
+body {
+  color: #fff;
+  font-family: arial, sans-sarif;
+  background-color: #333;
+  text-align: center;
+}
+
 .slide-one,
 .slide-two,
 .slide-three,
@@ -460,18 +467,75 @@ figcaption {
 
 /* End of Slide two CSS */
 
+/*Slide two*/
+/* coding lesson page*/
 .slide-three {
-  background: #00dfdf;
+  background: url("slide3-background.png");
+  background-size: cover;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  margin-left: 6%;
+  margin-top: 8%;
+  margin-right: 6%;
+  margin-bottom: 8%;
+  grid-gap: 5px;
+}
+
+.wizard4 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.speech4 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  margin-top: 50%;
+  text-align: center;
+  justify-items: center;
+  color: black;
+  font-size: 150%;
+}
+
+.lesson-grid {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: #e4afff63;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.5vw;
+  color: black;
+  position: relative;
+}
+
+.lesson-textbox {
+  margin-top: 10%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-top: 6%;
+  margin-right: 6%;
+  margin-bottom: 6%;
+  margin-left: 6%;
+}
+
+/*Slide 4 tarot cards*/
 .slide-four {
   background-image: url("assets/ground.png");
   background-size: cover;
   background-position: bottom;
   background-color: goldenrod;
 }
-
-/*Slide 4*/
 
 .tarot-page-grid {
   display: grid;
