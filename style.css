@@ -690,56 +690,82 @@ figcaption {
 }
 
 /* Quiz Css */
-.question {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-.answers {
-  margin-top: 5%;
-  margin-bottom: 20px;
-  text-align: center;
-  display: flexbox;
-  font-size: 2rem;
-}
-.answers label {
-  display: block;
-  margin-bottom: 10px;
-}
-button {
-  position: center;
-  margin-top: 10%;
-  margin-left: 20%;
-  font-size: 22px;
-  background-color: rgba(183, 113, 248, 0.781);
-  color: #fff;
-  border: 0px;
-  border-radius: 3px;
-  padding: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-button:hover {
-  background-color: rgb(41, 1, 78);
+
+:root {
+  --hue-neutral: 280; 
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 
-.slide {
-  position: absolute;
-  left: 0px;
-  top: 0px;
+.quiz{
+  box-sizing: border-box;
+  -hue: var(--hue-neutral); 
+  padding: 0;
+  margin: 0;
+  display: flex;
   width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
 }
-.active-slide {
-  opacity: 1;
-  z-index: 2;
+
+#correct {
+  --hue: var(--hue-correct);
 }
+
+#wrong {
+  --hue: var(--hue-wrong);
+}
+
 .quiz-container {
-  position: relative;
-  height: 200px;
-  margin-top: 40px;
+  width: 800px;
+  max-width: 80%;
+  background-color: #47026ca8;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+.btn-grid{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color:  hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+}
+
+.btn:hover {
+border-color: black;
+}
+
+.btn.correct {
+ --hue: var(--hue-correct);
+ color: black;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+  
+}
+
+.start-btn, .next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+.quiz-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
 }
 
 /* End of Quiz Css */
