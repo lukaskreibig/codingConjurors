@@ -110,9 +110,6 @@ figcaption {
 .element1 {
   grid-column: 3 / 5;
   grid-row: 3 / 4;
-  position: relative;
-  left: 40%;
-  top: 25%;
 }
 
 /* Wizard - column 1, row 2 */
@@ -122,6 +119,7 @@ figcaption {
   grid-row-start: 3;
   grid-row-end: 4;
   position: relative;
+  bottom: 25%;
 }
 
 /* Wizard's speech bubble */
