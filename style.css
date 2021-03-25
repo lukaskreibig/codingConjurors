@@ -80,7 +80,7 @@ figcaption {
 }
 
 .slide-two {
-  background-image: url("./assets/BackgroundSorting.png");
+  background-image: url("./assets/sortingsocks.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,18 +93,18 @@ figcaption {
 .sortingSocks {
   margin: 6%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 300px 200px;
-  grid-gap: 50px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 3%;
   font-family: "VT323", monospace;
 }
 
 /* Socks image - column 1, row 1 */
 .element1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 /* Wizard - column 1, row 2 */
@@ -113,9 +113,6 @@ figcaption {
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  position: relative;
-  text-align: center;
-  height: 150%;
 }
 
 /* Wizard's speech bubble */
@@ -123,21 +120,8 @@ figcaption {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
+  background-color: green;
 }
-
-/*  HEX colours from palette 
-   #C2F8CB; - bold light green #1
-   #B3E9C7 - warmer, lighter green
-   #5603AD - dark cold purple
-   #8367C7 - lighter cold purple
-   #47026C - de facto bg colour, warm dark purple
-   #C86BFA - lighter bright purple;
-   #E4AFFF - lilac ; 
-   #F5CF05 - gold ;
-   #FBE300 - yellow (lighter);
-   */
 
 /* Sorting Socks Answer Box */
 .element3 {
@@ -145,11 +129,10 @@ figcaption {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 2;
   text-align: center;
-  line-height: 1.6;
-  padding: 10%;
-  font-size: 1.5rem;
+  padding: 10px;
+  font-size: 30px;
   color: black;
 }
 
