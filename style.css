@@ -86,6 +86,16 @@ figcaption {
   align-content: flex-end;
 }
 
+#arrow {
+  font-size: 30px;
+  position: relative;
+  top: 80%;
+  color: red;
+  text-shadow: 2px 2px black;
+  opacity: 1;
+  animation: flickerAnimation 1s infinite;
+}
+
 /* Slide two Css */
 
 .slide-two {
@@ -975,5 +985,19 @@ figcaption {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+/* Animate SCROLL Arrow */
+@keyframes flickerAnimation {
+  /* flame pulses */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
