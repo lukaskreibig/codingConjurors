@@ -207,7 +207,6 @@ img[src*="./assets/wizard-idle-small.gif"] {
 
   #riddlebox {
     grid-column: 2 / 3;
-    grid-row: 2 /;
     color: white;
     text-shadow: 2px 2px black;
     font-style: italic;
