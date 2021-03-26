@@ -114,11 +114,14 @@ function setStatusClass(element, correct) {
 function selectAnswer(e) {
 const selectedButton = e.target
 const correct = selectedButton.dataset.correct
+
 if(shuffledQuestions.length > currentQuestionsIndex + 1) {
   nextButton.classList.remove('hide')}
   else { 
   startButton.innerText = 'The battle is OVER. Click to TRY AGAIN'
   startButton.classList.remove('hide')}
+  
+  
 }
 
 
@@ -152,6 +155,22 @@ const questions = [
       {text: 'callback function', correct: true},
       {text: 'hollaback function', correct: false},
       {text: 'high order function', correct: false}
+    ]
+  },
+  {
+    question: 'Are the curly brackets absolutely necessary when opening a function?',
+    answer: [ 
+      {text: 'yes', correct: true},
+      {text: 'no', correct: false},
+      {text: 'depends on the weather', correct: false}
+    ]
+  },
+  {
+    question: 'Javascript is only for front-end web development.',
+    answer: [ 
+      {text: 'false', correct: true},
+      {text: 'true', correct: false},
+      {text: "nobody knows what it's for!", correct: false}
     ]
   }
 ]
