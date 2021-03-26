@@ -769,11 +769,12 @@ figcaption {
     grid-row-start: 2;
     grid-row-end: 3;
     position: relative;
-    left: -22px;
+
+    left: -39px;
   }
 
   .speech4 {
-    color: orchid;
+    color: greenyellow;
     font-size: 20px;
     text-shadow: 2px 1px black;
   }
