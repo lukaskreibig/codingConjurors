@@ -183,7 +183,6 @@ const questions = [
 
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-const submitButton = document.getElementsByClassName('end')
 let shuffledQuestions 
 let currentQuestionsIndex
 
@@ -200,9 +199,7 @@ wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./asse
 evilWizardAttack.addEventListener('click', a = () => {
   wizardAttack.src = "./assets/WizardTakeHit2.gif" ; evilWizardAttack.src = "./assets/EvilAttack2.gif";}
   )
-  submitButton.addEventListener('click', a = () => {
-    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";}
-  )
+  
 //End of Slide Five Javascript
 
 
