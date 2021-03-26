@@ -25,7 +25,7 @@ speech[0].addEventListener('click', () => {
 button.onclick = function(){
  
     let i = Math.floor(0 + Math.random()*(careers.length + 1 - 0))
-	answer.innerHTML = `Your destiny is to... <br><br> become a ${careers[i].title}! ${careers[i].text}`;
+	answer.innerHTML = `Your destiny is to become a ${careers[i].title}! ${careers[i].text}`;
     
 }
 // End of Slide Two - Sorting Socks - Javascript
