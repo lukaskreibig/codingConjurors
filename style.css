@@ -636,7 +636,7 @@ figcaption {
 /*End prophecy box*/
 
 .slide-five {
-  background-image: url("./assets/BackgroundBattle.jpg");
+  background-image: url("./assets/Battleground4-1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -738,19 +738,21 @@ figcaption {
   grid-row: 2 / 3;
 }
 
-#wizardIdleBattle {
+.wizardIdleBattle {
   height: 80%;
   width: 80%;
   padding: 0%;
   padding-top: 0%;
 }
 
+
+
 .evilWiz {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
 
-#evilWizardIdle {
+.evilWizardIdle {
   margin-top: 0%;
   padding: 0%;
   margin-bottom: 0;

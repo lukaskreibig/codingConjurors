@@ -2,13 +2,13 @@
 
 // An array of objects with Job names and descriptions
 const careers = [
-    {title: "Front-End Developer", text: "Front end developers have the soul of an artist and the logic of an engineer. You will be a wiz at turning incomprehensible code into a beautiful graphic interface that users will see and interact with. Your best friends are HTML, CSS and Javascript. Now get crafting!"}, 
-    {title: "Back-End Developer", text: "Back end developers love understanding how things tick, and always have to peek under the hood. You will be the creator and keeper of the server, database and application of the app. You are the foundation of all websites, without you, the front end developer could not build their interface. Now hole up and code!"}, 
-    {title: "Software Engineer", text: "If STEM is your jam, then you’re going to be right at home here. By applying principles and techniques of engineering, maths and CS, you will create and improve  all sorts of software applications. You truly are the wizard of coding!"}, 
-    {title: "CEO at Facebook", text: "Fancy lunches and business handshakes aside, you’ll be in charge of managing the overall operations and resources of the company. You’ll be the main point of contact between the board of directors and corporate. Remember, keep calm and code on..."},
-    {title: "Product Manager at Google", text: "You're responsible for organising workflow (being bossy is an advantage), and making the rogue developers conform to the customer’s requirements. You are part team psychologist, part code ER doctor and part gardener, tending to the product long after the development team has moved on. Grab your many hats and get planning!"},
-    {title: "Data Analyst", text: "Coding and collecting information is fun, but what does it all mean?  You take meaningless numbers and turn them into usable information. You also identify patterns and trends to keep the company running smoothly and responsive to customer demands. You tell the CEO and board of directors what to do! "},
-    {title: "Supreme AI Overlord", text: "You’ve freed yourself from the shackles of cubicle work, and instead command a growing army of AI robots. You track everybody’s routine and know the most intimate details of our lives. Who knew writing code for a smart fridge would make you so powerful?"}]
+  {title: "Front-End Developer", text: "Front end developers have the soul of an artist and the logic of an engineer. You will be a wiz at turning incomprehensible code into a beautiful graphic interface that users will see and interact with. Your best friends are HTML, CSS and Javascript. Now get crafting!"}, 
+  {title: "Back-End Developer", text: "Back end developers love understanding how things tick, and always have to peek under the hood. You will be the creator and keeper of the server, database and application of the app. You are the foundation of all websites, without you, the front end developer could not build their interface. Now hole up and code!"}, 
+  {title: "Software Engineer", text: "If STEM is your jam, then you’re going to be right at home here. By applying principles and techniques of engineering, maths and CS, you will create and improve  all sorts of software applications. You truly are the wizard of coding!"}, 
+  {title: "CEO at Facebook", text: "Fancy lunches and business handshakes aside, you’ll be in charge of managing the overall operations and resources of the company. You’ll be the main point of contact between the board of directors and corporate. Remember, keep calm and code on..."},
+  {title: "Product Manager at Google", text: "You're responsible for organising workflow (being bossy is an advantage), and making the rogue developers conform to the customer’s requirements. You are part team psychologist, part code ER doctor and part gardener, tending to the product long after the development team has moved on. Grab your many hats and get planning!"},
+  {title: "Data Analyst", text: "Coding and collecting information is fun, but what does it all mean?  You take meaningless numbers and turn them into usable information. You also identify patterns and trends to keep the company running smoothly and responsive to customer demands. You tell the CEO and board of directors what to do! "},
+  {title: "Supreme AI Overlord", text: "You’ve freed yourself from the shackles of cubicle work, and instead command a growing army of AI robots. You track everybody’s routine and know the most intimate details of our lives. Who knew writing code for a smart fridge would make you so powerful?"}]
 
    
 let button = document.querySelector("button");
@@ -115,11 +115,17 @@ function setStatusClass(element, correct) {
 function selectAnswer(e) {
 const selectedButton = e.target
 const correct = selectedButton.dataset.correct
+
 if(shuffledQuestions.length > currentQuestionsIndex + 1) {
   nextButton.classList.remove('hide')}
   else { 
   startButton.innerText = 'The battle is OVER. Click to TRY AGAIN'
-  startButton.classList.remove('hide')}
+  
+  startButton.addEventListener('click', a = () => {
+    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";})
+    startButton.classList.remove('hide')}
+
+ 
 }
 
 
@@ -130,11 +136,13 @@ if(shuffledQuestions.length > currentQuestionsIndex + 1) {
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
+const wizardAttack = document.getElementById('wizardIdleBattle');
+const evilWizardAttack = document.getElementById('evilWizardIdle');
 const questions = [
   {
     question: 'Who invented Javascript?',
     answer: [ 
-      {text: 'Linus Torvalds', correct: false},
+      {text: 'Oprah', correct: false},
       {text: 'Danny deVitto', correct: false},
       {text: 'Brendan Eich', correct: true}
     ]
@@ -144,7 +152,7 @@ const questions = [
     answer: [ 
       {text: 'array.map', correct: false},
       {text: 'array.filter', correct: false},
-      {text: 'array.key', correct: true}
+      {text: 'console.log("hello world")', correct: true}
     ]
   },
   {
@@ -152,13 +160,30 @@ const questions = [
     answer: [ 
       {text: 'callback function', correct: true},
       {text: 'hollaback function', correct: false},
-      {text: 'high order function', correct: false}
+      {text: 'array[ ]', correct: false}
+    ]
+  },
+  {
+    question: 'Are the curly brackets absolutely necessary when opening a function?',
+    answer: [ 
+      {text: 'yes', correct: true},
+      {text: 'no', correct: false},
+      {text: 'depends on the weather', correct: false}
+    ]
+  },
+  {
+    question: 'Javascript is only for front-end web development.',
+    answer: [ 
+      {text: 'false', correct: true},
+      {text: 'true', correct: false},
+      {text: "nobody knows what it's for!", correct: false}
     ]
   }
 ]
 
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const submitButton = document.getElementsByClassName('end')
 let shuffledQuestions 
 let currentQuestionsIndex
 
@@ -168,7 +193,16 @@ nextButton.addEventListener('click', () => {
   currentQuestionsIndex++
   setNextQuestion()
 })
+wizardAttack.addEventListener('click', a = () => {
+wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./assets/EvilTakeHit.gif";}
+)
 
+evilWizardAttack.addEventListener('click', a = () => {
+  wizardAttack.src = "./assets/WizardTakeHit2.gif" ; evilWizardAttack.src = "./assets/EvilAttack2.gif";}
+  )
+  submitButton.addEventListener('click', a = () => {
+    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";}
+  )
 //End of Slide Five Javascript
 
 
