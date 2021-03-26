@@ -120,7 +120,11 @@ if(shuffledQuestions.length > currentQuestionsIndex + 1) {
   nextButton.classList.remove('hide')}
   else { 
   startButton.innerText = 'The battle is OVER. Click to TRY AGAIN'
-  startButton.classList.remove('hide')}
+  
+  startButton.addEventListener('click', a = () => {
+    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";})
+    startButton.classList.remove('hide')}
+
  
 }
 
@@ -132,13 +136,13 @@ if(shuffledQuestions.length > currentQuestionsIndex + 1) {
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
-const wizardBattle = document.getElementsByClassName('wizardIdleBattle')
-const evilWizard = document.getElementsByClassName('evilWizardIdle')
+const wizardAttack = document.getElementById('wizardIdleBattle');
+const evilWizardAttack = document.getElementById('evilWizardIdle');
 const questions = [
   {
     question: 'Who invented Javascript?',
     answer: [ 
-      {text: 'Linus Torvalds', correct: false},
+      {text: 'Oprah', correct: false},
       {text: 'Danny deVitto', correct: false},
       {text: 'Brendan Eich', correct: true}
     ]
@@ -148,7 +152,7 @@ const questions = [
     answer: [ 
       {text: 'array.map', correct: false},
       {text: 'array.filter', correct: false},
-      {text: 'array.key', correct: true}
+      {text: 'console.log("hello world")', correct: true}
     ]
   },
   {
@@ -156,7 +160,7 @@ const questions = [
     answer: [ 
       {text: 'callback function', correct: true},
       {text: 'hollaback function', correct: false},
-      {text: 'high order function', correct: false}
+      {text: 'array[ ]', correct: false}
     ]
   },
   {
@@ -179,6 +183,7 @@ const questions = [
 
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const submitButton = document.getElementsByClassName('end')
 let shuffledQuestions 
 let currentQuestionsIndex
 
@@ -188,8 +193,16 @@ nextButton.addEventListener('click', () => {
   currentQuestionsIndex++
   setNextQuestion()
 })
- 
+wizardAttack.addEventListener('click', a = () => {
+wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./assets/EvilTakeHit.gif";}
+)
 
+evilWizardAttack.addEventListener('click', a = () => {
+  wizardAttack.src = "./assets/WizardTakeHit2.gif" ; evilWizardAttack.src = "./assets/EvilAttack2.gif";}
+  )
+  submitButton.addEventListener('click', a = () => {
+    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";}
+  )
 //End of Slide Five Javascript
 
 
