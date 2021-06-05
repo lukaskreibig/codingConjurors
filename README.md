@@ -34,7 +34,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](assets/CodingConjuror-screenshot.png)
+![Product Name Screen Shot](assets/CodingConjuror-screenshot.png)
 
 When setting out to create our first project at Wild Code School, our vision was to design a fun experience for those taking their very first steps into learning Javascript for Web Development. That's why we decided on bringing together the worlds of magic and coding into a pixel art themed game.
 
@@ -59,7 +59,7 @@ Our website features:
 
 Anna Gosme - [Github](https://github.com/AnnaGosme) - [LinkedIn](https://www.linkedin.com/in/anna-gosme/)  
 
-Lukas Kreibig - [Github](https://github.com/lukaskreibig) - [LinhedIn](https://www.linkedin.com/in/lukas-kreibig/)
+Lukas Kreibig - [Github](https://github.com/lukaskreibig) - [LinkedIn](https://www.linkedin.com/in/lukas-kreibig/)
 
 
-Anca Gheorghe - [Github](https://github.com/anca2196) -  [LinhedIn](https://www.linkedin.com/in/anca-laura-gheorghe/)
+Anca Gheorghe - [Github](https://github.com/anca2196) -  [LinkedIn](https://www.linkedin.com/in/anca-laura-gheorghe/)
