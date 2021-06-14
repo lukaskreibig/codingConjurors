@@ -281,6 +281,7 @@ figcaption {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5%;
     font-family: "VT323", monospace;
   }
 
@@ -881,28 +882,30 @@ figcaption {
   background-size: cover;
 }
 /* */
+
+
 /* Start of Battle CSS */
 
 .battleGrid {
-  display: grid;
-  height: 95%;
-  margin-bottom: auto;
-  margin-top: 2%;
-  margin-left: 4%;
-  margin-right: 4%;
-  grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
-  grid-template-rows: 2fr 1fr;
-  grid-gap: 2%;
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  height:90%;
+  justify-content: space-evenly;
 }
-.quiz {
-  grid-column: 2 / 6;
-  grid-row: 1 / 2;
-}
+
 
 /* Quiz Css */
 
+:root {
+  --hue-neutral: 105;
+  --hue-wrong: 0;
+}
+
 #clickonit {
   color: black;
+  text-shadow: 2px 2px white,
+  2px 2px 3px white;
   font-size: 30px;
 }
 
@@ -912,51 +915,47 @@ figcaption {
   margin: 0;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 20vh;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   color: white;
-}
-
-.quiz.correct {
-  background-color: rgb(57, 219, 17);
-}
-
-.quiz.wrong {
-  background-color: rgb(187, 0, 0);
+  position: relative;
 }
 
 .quizContainer {
+  box-sizing: border-box;
+  margin: 0;
   width: 800px;
   max-width: 80%;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  padding: 2%;
   box-shadow: 0 0 20px 2px;
 }
 .btn-grid {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   gap: 15px;
   margin: 20px 0;
 }
 .btn {
   border: 1px solid black;
-  background-color: lightseagreen;
+  background-color: hsl(var(--hue-neutral), 100%, 75%);
   border-radius: 5px;
+
 }
 
 .btn:hover {
-  border-color: rgb(255, 255, 255);
+  background-color: 	hsl(87, 100%, 90%);
 }
 
 .btn.correct {
-  background-color: rgb(57, 219, 17);
+  background-color: hsl(var(--hue-neutral), 100%, 75%);
   color: black;
 }
 
 .btn.wrong {
-  background-color: red;
+  background-color: hsl(var(--hue-wrong), 70%, 41%);
   color: black;
 }
 
@@ -978,29 +977,37 @@ figcaption {
 /* End of Quiz Css */
 
 .wiz {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 2% 30%;
 }
 
-.wizardIdleBattle {
-  height: 80%;
-  width: 80%;
-  padding: 0%;
-  padding-top: 0%;
+#wizardIdleBattle {
+  left: 250px;
+  width: 350px;
 }
 
-.evilWiz {
-  grid-column: 4 / 5;
-  grid-row: 2 / 3;
+#evilWizardIdle {
+  right: 250px;
+  width:450px;
 }
 
-.evilWizardIdle {
-  margin-top: 0%;
-  padding: 0%;
-  margin-bottom: 0;
-  height: 70%;
-  width: 70%;
-}
+ @media screen and (max-width: 819px) and (orientation: landscape) {
+ .quiz{
+  margin: 20% 5% 0% 5%;
+  width:100%;
+  height:10vh;
+  font-size: 20px;
+} 
+
+ div#clickonit{
+  display: none;
+}} 
+
+
 
 /* End of Battle CSS */
 
