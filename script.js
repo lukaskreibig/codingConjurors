@@ -60,84 +60,23 @@ card.forEach((card) => {
 //End of Tarots page
 
 
+
 //Slide Five - Battle Javascript
 
-//Quiz Functions
-   //this function starts the game when we press start
-function startGame() {
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionsIndex = 0
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion()
-}
-
-function setNextQuestion() {
-  resetState()
-  showQuestion(shuffledQuestions[currentQuestionsIndex])
-}
-
-function showQuestion(question) {
-questionElement.innerText = question.question
-question.answer.forEach(answer => {
-  const button = document.createElement('button')
-  button.innerText = answer.text
-  button.classList.add('btn')
-  if (answer.correct) {
-    button.dataset.correct = answer.correct
-  }
-  button.addEventListener('click', selectAnswer)
-  answerButtonsElement.appendChild(button)
-})
-}
-
-function resetState() {
-  nextButton.classList.add('hide')
-  while(answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
-}
-
-function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
-} 
-
-function setStatusClass(element, correct) {
-  clearStatusClass(element)
-  if (correct) {
-    element.classList.add('correct')
-  } else {
-    element.classList.add('wrong')
-  }
-}
-
-function selectAnswer(e) {
-const selectedButton = e.target
-const correct = selectedButton.dataset.correct
-
-if(shuffledQuestions.length > currentQuestionsIndex + 1) {
-  nextButton.classList.remove('hide')}
-  else { 
-  startButton.innerText = 'The battle is OVER. Click to TRY AGAIN'
-  
-  startButton.addEventListener('click', a = () => {
-    wizardAttack.src = "./assets/WizardAttack1.gif" ; evilWizardAttack.src = "./assets/EvilDeath.gif";})
-    startButton.classList.remove('hide')}
-
- 
-}
-
-
-
-
-
-//Quiz Variables documnet.class , correct
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//        Quiz Variable
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('question-container');
 const wizardAttack = document.getElementById('wizardIdleBattle');
 const evilWizardAttack = document.getElementById('evilWizardIdle');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+const win = document.getElementById("win");
+const lose = document.getElementById("lose");
+let shuffledQuestions , currentQuestionsIndex ;
+
 const questions = [
   {
     question: 'Who invented Javascript?',
@@ -179,26 +118,123 @@ const questions = [
       {text: "nobody knows what it's for!", correct: false}
     ]
   }
-]
+];
 
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-let shuffledQuestions 
-let currentQuestionsIndex
 
-//Quiz Event listeners
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//        Quiz Functions
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let counter = 0
+
+   //this function starts the game when we press start
+function startGame() {
+  startButton.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionsIndex = 0
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
+}
+
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionsIndex])
+}
+
+function showQuestion(question) {
+questionElement.innerText = question.question
+question.answer.forEach(answer => {
+  const button = document.createElement('button')
+  button.innerText = answer.text
+  button.classList.add('btn')
+  if (answer.correct) {
+    button.dataset.correct = answer.correct
+    button.addEventListener('click', a = () => {
+      wizardAttack.src = "./assets/WATTACK.gif" ; evilWizardAttack.src = "./assets/EHIT.gif";
+     counter++}
+      )
+  } else {
+    button.addEventListener('click', a = () => {
+      wizardAttack.src = "./assets/WHIT.gif" ; evilWizardAttack.src = "./assets/EVILATTACK1.gif";}
+      )
+  }
+  button.addEventListener('click', selectAnswer)
+  answerButtonsElement.appendChild(button)
+})
+}
+
+function resetState() {
+  nextButton.classList.add('hide')
+  while(answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+  }
+}
+
+function selectAnswer(e) {
+const selectedButton = e.target
+const correct = selectedButton.dataset.correct
+Array.from(answerButtonsElement.children).forEach(button => {
+  setStatusClass(button, button.dataset.correct)
+})
+if(shuffledQuestions.length > currentQuestionsIndex + 1) {
+  nextButton.classList.remove('hide')}
+else { 
+  questionContainerElement.classList.add("hide")
+  if(counter >= 3 ){
+    win.classList.remove("hide")
+    wizardAttack.src="./assets/WATTACK.gif"
+    evilWizardAttack.src = "./assets/EVILDEATH.gif"
+  } else if (counter < 3){
+    lose.classList.remove("hide")
+    wizardAttack.src="./assets/WD.gif"
+    evilWizardAttack.src = "./assets/EVILATTACK1.gif"
+  }
+  startButton.innerText = 'Start Again'
+  startButton.addEventListener("click", a = () =>{
+    win.classList.add("hide");
+    lose.classList.add("hide");
+  })
+    startButton.classList.remove('hide')
+  
+  counter = 0}
+}
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  //   if(correct !== true) {
+  //     wizardAttack.src = "./assets/WHIT.gif" ; evilWizardAttack.src = "./assets/EVILATTACK1.gif";
+  // }
+}
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+} 
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//        Quiz Event listeners 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionsIndex++
   setNextQuestion()
 })
 wizardAttack.addEventListener('click', a = () => {
-wizardAttack.src = "./assets/WizardAttack2.gif" ; evilWizardAttack.src = "./assets/EvilTakeHit.gif";}
+wizardAttack.src = "./assets/WATTACK.gif" ; evilWizardAttack.src = "./assets/EHIT.gif";
+
+}
 )
 
 evilWizardAttack.addEventListener('click', a = () => {
-  wizardAttack.src = "./assets/WizardTakeHit2.gif" ; evilWizardAttack.src = "./assets/EvilAttack2.gif";}
+  wizardAttack.src = "./assets/WHIT.gif" ; evilWizardAttack.src = "./assets/EVILATTACK1.gif";}
   )
+
   
 //End of Slide Five Javascript
 
